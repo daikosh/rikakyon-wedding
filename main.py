@@ -52,8 +52,8 @@ def generate_blocks():
 
 def generate_text(blocks):
     blocks[0].title("犬飼響介 結婚式 2次会専用HP")
-    blocks[1].subheader("招待者専用のホームページです。流出しないでね。")
-    blocks[2].info("Authorized Personnel Only")
+    blocks[1].info("Authorized Personnel Only")
+    blocks[2].subheader("招待者専用のホームページです。流出しないでね。")
 
 def clear_blocks(blocks):
     for block in blocks:

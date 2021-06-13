@@ -29,8 +29,8 @@ def main():
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
         col2.image(image, output_format="jpeg", width=400)
-    st.subheader("招待者専用のホームページです。流出しないでね。")
     st.info("Authorized Personnel Only")
+    st.subheader("招待者専用のホームページです。流出しないでね。")
     st.write("サイドバーからコンテンツを選ぶんじゃ。")
 
 if __name__ == "__main__":
