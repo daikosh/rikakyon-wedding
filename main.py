@@ -78,7 +78,8 @@ def main():
             #clear_blocks(blocks)
             login_expander.success("Logged / ログインに成功しました。")
             st.title("松井響介&犬飼理香子 結婚式 二次会特設サイト 〜Just Married!〜")
-            selection = st.radio("", list(PAGES.keys()))
+            radio_expander = st.beta_expander("コンテンツ / Contents", expanded=True)
+            selection = radio_expander.radio("", list(PAGES.keys()))
             page = PAGES[selection]
             page.main()
         else:
