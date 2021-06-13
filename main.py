@@ -27,7 +27,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 def initialization():
     global PAGES
     PAGES = {
-        "ホームページ": homepage,
+        "ご挨拶": homepage,
         "マツイキョースケのオールナイトニッポン🍆📻": radio
         #"二人の生い立ち": homepage,
         #"二人の家族構成": homepage,
