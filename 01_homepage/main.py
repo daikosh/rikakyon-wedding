@@ -30,8 +30,8 @@ def main():
         image = Image.open(imgpath)
         col2.image(image, output_format="jpeg", width=400)
     st.info("Authorized Personnel Only")
-    st.subheader("招待者専用のホームページです。流出しないでね。")
-    st.write("サイドバーからコンテンツを選ぶんじゃ。")
+    st.subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
+    st.subheader("サイドバーからコンテンツを選ぶんじゃ。")
 
 if __name__ == "__main__":
     main()
