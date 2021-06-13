@@ -11,7 +11,7 @@ PASSWORD = "happywedding"
 st.set_page_config(
     page_title="犬飼響介 結婚式 2次会専用HP",
     page_icon="🎊",
-    layout="wide",
+    #layout="wide",
     initial_sidebar_state="expanded"
 )
 
