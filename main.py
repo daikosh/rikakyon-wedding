@@ -9,7 +9,7 @@ PASSWORD = "happywedding"
 
 ## Page Config ##
 st.set_page_config(
-    page_title="Happy Wedding Kyosuke & Rikako",
+    page_title="犬飼響介 結婚式 2次会専用HP",
     page_icon="🎊",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -51,7 +51,7 @@ def generate_blocks():
     return main_title, main_description, main_description_eng
 
 def generate_text(blocks):
-    blocks[0].title("Happy Wedding Kyosuke & Rikako！")
+    blocks[0].title("犬飼響介 結婚式 2次会専用HP")
     blocks[1].subheader("招待者専用のホームページです。流出しないでね。")
     blocks[2].info("Authorized Personnel Only")
 
@@ -81,9 +81,9 @@ def main():
             st.sidebar.warning("ユーザ名またはパスワードが間違っています / Incorrect Username or Password")
 
     ## Footer ##
-    st.write("Copyright © 2021 Happy Wedding RikaKyon Association. All Rights Reserved.")
+    st.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
     st.write("Created by daikosh")
-    st.sidebar.write("Copyright © 2021 Happy Wedding RikaKyon Association. All Rights Reserved.")
+    st.sidebar.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
     st.sidebar.write("Created by daikosh")
 
 if __name__ == "__main__":
