@@ -23,7 +23,7 @@ def main():
     initialization()
 
     ## Body ##
-    st.title("ご挨拶")
+    #st.title("ご挨拶")
     imgpath = "01_homepage/01_main.jpg"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
