@@ -22,7 +22,7 @@ def main():
     initialization()
 
     ## Body ##
-    st.title("Happy Wedding Kyosuke & Rikako！")
+    st.title("犬飼響介 結婚式 2次会専用HP")
     st.subheader("招待者専用のホームページです。流出しないでね。")
     st.info("Authorized Personnel Only")
     st.write("サイドバーの'Choose Apps'からコンテンツを選ぶんじゃ。")

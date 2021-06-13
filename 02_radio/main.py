@@ -30,15 +30,17 @@ def open_radio_expander(title, imgpath, mp3path):
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/mp3')
         else:
-            st.write("準備中です！！！")
+            st.info("準備中です！！！")
 
 def main():
     initialization()
 
     ## Body ##
-    st.title("マツイキョースケのオールナイトニッポン")
+    st.title("マツイキョースケのオールナイトニッポン📻")
     open_radio_expander("#1 〜ついに結婚します！〜 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)", '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3')
-    open_radio_expander("#2 〜離婚の危機！？〜 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)", '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3')
+    open_radio_expander("#2 〜？？？〜 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)", '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3')
+    open_radio_expander("#3 〜？？？〜 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/03_radio_no3.jpg', '02_radio/03_radio_no3.mp3')
+    open_radio_expander("#4 〜？？？〜 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/04_radio_no4.jpg', '02_radio/04_radio_no4.mp3')
 
 if __name__ == "__main__":
     main()
