@@ -25,9 +25,12 @@ def open_radio_expander(title, imgpath, mp3path):
         #image = ImageOps.flip(image)
         #image = ImageOps.mirror(image)
         col2.image(image, output_format="jpeg", width=400)
-        audio_file = open(mp3path, 'rb')
-        audio_bytes = audio_file.read()
-        st.audio(audio_bytes, format='audio/mp3')
+        if os.path.exists(mp3path):
+            audio_file = open(mp3path, 'rb')
+            audio_bytes = audio_file.read()
+            st.audio(audio_bytes, format='audio/mp3')
+        else:
+            st.write("準備中です！！！")
 
 def main():
     initialization()
@@ -35,7 +38,7 @@ def main():
     ## Body ##
     st.title("マツイキョースケのオールナイトニッポン")
     open_radio_expander("#1 〜ついに結婚します！〜 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)", '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3')
-    #open_radio_expander("#2 〜離婚の危機！？〜 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)", '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3')
+    open_radio_expander("#2 〜離婚の危機！？〜 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)", '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3')
 
 if __name__ == "__main__":
     main()

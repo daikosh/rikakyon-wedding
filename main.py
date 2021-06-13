@@ -82,9 +82,7 @@ def main():
 
     ## Footer ##
     st.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
-    st.write("Created by daikosh")
     st.sidebar.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
-    st.sidebar.write("Created by daikosh")
 
 if __name__ == "__main__":
     main()
