@@ -27,7 +27,7 @@ def main():
     imgpath = "01_homepage/01_main.jpg"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
-        st.image(image, output_format="jpeg", width=400)
+        st.image(image, output_format="jpeg", width=700)
     st.info("Authorized Personnel Only")
     st.subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
     st.subheader("サイドバーからコンテンツを選ぶんじゃ。")
