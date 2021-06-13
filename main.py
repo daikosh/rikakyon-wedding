@@ -74,7 +74,7 @@ def main():
         if is_authenticated(username, password):
             clear_blocks(blocks)
             # login_expander.success("Logged / ログインに成功しました。")
-            selection = st.sidebar.radio("コンテンツを選択してください / Choose Contents", list(PAGES.keys()))
+            selection = st.sidebar.radio("", list(PAGES.keys()))
             page = PAGES[selection]
             page.main()
         else:
