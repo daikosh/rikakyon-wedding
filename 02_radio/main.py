@@ -21,7 +21,8 @@ def download_link(object_to_download, download_filename, download_link_text):
 def open_radio_expander(title, imgpath, mp3path):
     with st.beta_expander(title, expanded=True):
         col1, col2, col3 = st.beta_columns(3)
-        image = Image.open(imgpath)
+        if os.path.exists(imgpath):
+            image = Image.open(imgpath)
         #image = ImageOps.flip(image)
         #image = ImageOps.mirror(image)
         col2.image(image, output_format="jpeg", width=400)
