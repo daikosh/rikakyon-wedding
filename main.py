@@ -5,7 +5,7 @@ radio = importlib.import_module("02_radio.main")
 
 ## Parameters ##
 USERNAME = "rikakyon"
-PASSWORD = "happywedding"
+PASSWORD = "20220326"
 
 ## Page Config ##
 st.set_page_config(

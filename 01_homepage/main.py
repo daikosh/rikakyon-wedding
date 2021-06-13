@@ -28,7 +28,7 @@ def main():
     col1, col2, col3, col4, col5 = st.beta_columns(5)
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
-        col2.image(image, output_format="jpeg", width=400)
+        st.image(image, output_format="jpeg", use_column_width="auto")
     st.info("Authorized Personnel Only")
     st.subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
     st.subheader("サイドバーからコンテンツを選ぶんじゃ。")
