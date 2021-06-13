@@ -62,7 +62,7 @@ def clear_blocks(blocks):
 def main():
     initialization()
     ## sidebar ##
-    login_expander = st.sidebar.beta_expander("ログインセクション / Login Section", expanded=True)
+    login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
     username = login_expander.text_input("ユーザ名 / Username")
     password = login_expander.text_input("パスワード / Password", value="", type="password")
     login_checkbox = login_expander.checkbox("ログイン / LOGIN")
@@ -74,15 +74,15 @@ def main():
         if is_authenticated(username, password):
             clear_blocks(blocks)
             # login_expander.success("Logged / ログインに成功しました。")
-            selection = st.sidebar.radio("", list(PAGES.keys()))
+            selection = st.radio("", list(PAGES.keys()))
             page = PAGES[selection]
             page.main()
         else:
-            st.sidebar.warning("ユーザ名またはパスワードが間違っています / Incorrect Username or Password")
+            st.warning("ユーザ名またはパスワードが間違っています / Incorrect Username or Password")
 
     ## Footer ##
     st.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
-    st.sidebar.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
+    #st.sidebar.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
 
 if __name__ == "__main__":
     main()

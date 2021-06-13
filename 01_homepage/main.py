@@ -25,9 +25,10 @@ def main():
     ## Body ##
     st.title("犬飼響介 結婚式 2次会専用HP")
     imgpath = "01_homepage/01_main.jpg"
+    col1, col2, col3, col4, col5 = st.beta_columns(5)
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
-        st.image(image, output_format="jpeg", width=700)
+        col2.image(image, output_format="jpeg", width=400)
     st.info("Authorized Personnel Only")
     st.subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
     st.subheader("サイドバーからコンテンツを選ぶんじゃ。")
