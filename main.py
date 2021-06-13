@@ -28,7 +28,7 @@ def initialization():
     global PAGES
     PAGES = {
         "ホームページ": homepage,
-        "マツイキョースケのオールナイトニッポン": radio
+        "🍆マツイキョースケのオールナイトニッポン📻": radio
         #"二人の生い立ち": homepage,
         #"二人の家族構成": homepage,
         #"犬神家の歴史": homepage,
