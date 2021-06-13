@@ -31,7 +31,6 @@ def main():
         st.image(image, output_format="jpeg", use_column_width="auto")
     st.info("Authorized Personnel Only")
     st.subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
-    st.subheader("サイドバーからコンテンツを選ぶんじゃ。")
 
 if __name__ == "__main__":
     main()
