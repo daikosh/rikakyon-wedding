@@ -27,7 +27,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 def initialization():
     global PAGES
     PAGES = {
-        "コンテンツを選択してください。": homepage,
+        "ホームページ": homepage,
         "マツイキョースケのオールナイトニッポン": radio
         #"二人の生い立ち": homepage,
         #"二人の家族構成": homepage,
@@ -74,7 +74,7 @@ def main():
         if is_authenticated(username, password):
             clear_blocks(blocks)
             # login_expander.success("Logged / ログインに成功しました。")
-            selection = st.sidebar.selectbox("コンテンツを選択してください / Choose Contents", list(PAGES.keys()))
+            selection = st.sidebar.radio("コンテンツを選択してください / Choose Contents", list(PAGES.keys()))
             page = PAGES[selection]
             page.main()
         else:
