@@ -23,9 +23,7 @@ def open_radio_expander(title, imgpath, mp3path):
         col1, col2, col3 = st.beta_columns(3)
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
-        #image = ImageOps.flip(image)
-        #image = ImageOps.mirror(image)
-        col2.image(image, output_format="jpeg", width=400)
+            col2.image(image, output_format="jpeg", width=400)
         if os.path.exists(mp3path):
             audio_file = open(mp3path, 'rb')
             audio_bytes = audio_file.read()
