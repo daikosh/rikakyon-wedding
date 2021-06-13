@@ -50,14 +50,14 @@ def generate_blocks():
     main_description_eng = st.empty()
     return main_title, main_description, main_description_eng
 
-def generate_text(blocks):
-    blocks[0].title("犬飼響介 結婚式 2次会専用HP")
-    blocks[1].info("Authorized Personnel Only")
-    blocks[2].subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
+#def generate_text(blocks):
+#    blocks[0].title("犬飼響介 結婚式 2次会専用HP")
+#    blocks[1].info("Authorized Personnel Only")
+#    blocks[2].subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
 
-def clear_blocks(blocks):
-    for block in blocks:
-        block.empty()
+#def clear_blocks(blocks):
+#    for block in blocks:
+#        block.empty()
 
 def main():
     initialization()
@@ -69,12 +69,15 @@ def main():
     login_checkbox = login_expander.checkbox("ログイン / LOGIN")
 
     ## Body ##
-    blocks = generate_blocks()
-    generate_text(blocks)
+    #blocks = generate_blocks()
+    #generate_text(blocks)
     if login_checkbox:
         if is_authenticated(username, password):
             #clear_blocks(blocks)
             login_expander.success("Logged / ログインに成功しました。")
+            login_expander.info("Authorized Personnel Only")
+            login_expander.subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
+            st.title("犬飼響介 結婚式 2次会専用HP")
             selection = st.radio("", list(PAGES.keys()))
             page = PAGES[selection]
             page.main()
