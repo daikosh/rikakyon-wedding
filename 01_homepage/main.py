@@ -23,14 +23,13 @@ def main():
     initialization()
 
     ## Body ##
-    st.title("犬飼響介 結婚式 2次会専用HP")
+    st.title("ご挨拶")
     imgpath = "01_homepage/01_main.jpg"
-    col1, col2, col3, col4, col5 = st.beta_columns(5)
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
         st.image(image, output_format="jpeg", use_column_width="auto")
-    st.info("Authorized Personnel Only")
-    st.subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
+    #st.info("Authorized Personnel Only")
+    #st.subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
 
 if __name__ == "__main__":
     main()

@@ -72,7 +72,7 @@ def main():
     generate_text(blocks)
     if login_checkbox:
         if is_authenticated(username, password):
-            clear_blocks(blocks)
+            #clear_blocks(blocks)
             # login_expander.success("Logged / ログインに成功しました。")
             selection = st.radio("", list(PAGES.keys()))
             page = PAGES[selection]
