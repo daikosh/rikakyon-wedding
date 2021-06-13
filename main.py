@@ -4,8 +4,8 @@ homepage = importlib.import_module("01_homepage.main")
 radio = importlib.import_module("02_radio.main")
 
 ## Parameters ##
-USERNAME = "admin"
-PASSWORD = "password"
+USERNAME = "rikakyon"
+PASSWORD = "happywedding"
 
 ## Page Config ##
 st.set_page_config(
@@ -71,7 +71,7 @@ def main():
     blocks = generate_blocks()
     generate_text(blocks)
     if login_checkbox:
-        if True:# is_authenticated(username, password):
+        if is_authenticated(username, password):
             clear_blocks(blocks)
             # login_expander.success("Logged / ログインに成功しました。")
             selection = st.sidebar.selectbox("コンテンツを選択してください / Choose Contents", list(PAGES.keys()))
