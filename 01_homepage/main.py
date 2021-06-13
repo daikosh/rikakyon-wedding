@@ -21,15 +21,11 @@ def download_link(object_to_download, download_filename, download_link_text):
 
 def main():
     initialization()
-
     ## Body ##
-    #st.title("ご挨拶")
     imgpath = "01_homepage/01_main.jpg"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
         st.image(image, output_format="jpeg", use_column_width="auto")
-    #st.info("Authorized Personnel Only")
-    #st.subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
 
 if __name__ == "__main__":
     main()

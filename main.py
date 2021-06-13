@@ -53,7 +53,7 @@ def generate_blocks():
 def generate_text(blocks):
     blocks[0].title("犬飼響介 結婚式 2次会専用HP")
     blocks[1].info("Authorized Personnel Only")
-    blocks[2].subheader("こちらは招待者専用のホームページです。URLやログイン情報は流出させないでください。")
+    blocks[2].subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
 
 def clear_blocks(blocks):
     for block in blocks:
@@ -61,7 +61,8 @@ def clear_blocks(blocks):
 
 def main():
     initialization()
-    ## sidebar ##
+
+    ## Login Section ##
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
     username = login_expander.text_input("ユーザ名 / Username")
     password = login_expander.text_input("パスワード / Password", value="", type="password")
