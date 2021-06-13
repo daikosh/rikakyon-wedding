@@ -20,10 +20,10 @@ def download_link(object_to_download, download_filename, download_link_text):
 
 def open_radio_expander(title, imgpath, mp3path):
     with st.beta_expander(title, expanded=True):
-        col1, col2, col3 = st.beta_columns(3)
+        #col1, col2, col3 = st.beta_columns(3)
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
-            col2.image(image, output_format="jpeg", width=400)
+            st.image(image, output_format="jpeg", width=400)
         if os.path.exists(mp3path):
             audio_file = open(mp3path, 'rb')
             audio_bytes = audio_file.read()
