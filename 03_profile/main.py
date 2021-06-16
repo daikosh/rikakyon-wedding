@@ -31,26 +31,32 @@ def main():
     initialization()
 
     ## Body ##
-    with st.beta_expander("執行役員", expanded=False):
+    with st.beta_expander("取締役"):
         col1, col2 = st.beta_columns(2)
         with col1:
             show_image("03_profile/01_kyosuke.png", "png")
             write_text("松井 響介", "24", "Black")
+            write_text("代表取締役AGO", "16", "Black")
         with col2:
             show_image("03_profile/07_rikako.png", "png")
             write_text("犬飼 理香子", "24", "Black")
-    with st.beta_expander("取締役", expanded=False):
+            write_text("代表取締役AHO", "16", "Black")
+    with st.beta_expander("執行役員"):
         col1, col2 = st.beta_columns(2)
         with col1:
             show_image("03_profile/05_akuzawa.png", "png")
             write_text("阿久澤 拓也", "24", "Black")
+            write_text("アイデア・エンジニア", "16", "Black")
             show_image("03_profile/02_daikosh.png", "png")
             write_text("松岡 大起", "24", "Black")
+            write_text("エンジニア", "16", "Black")
         with col2:
             show_image("03_profile/04_rinrin.png", "png")
             write_text("林 寛人", "24", "Black")
+            write_text("営業", "16", "Black")
             show_image("03_profile/06_nobuaki.png", "png")
             write_text("吉種 伸彰", "24", "Black")
+            write_text("経歴", "16", "Black")
 
 if __name__ == "__main__":
     main()
