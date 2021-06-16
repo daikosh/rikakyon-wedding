@@ -18,26 +18,28 @@ def download_link(object_to_download, download_filename, download_link_text):
     b64 = base64.b64encode(object_to_download.encode()).decode()
     return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
 
-def open_radio_expander(title, imgpath, mp3path):
-    with st.beta_expander(title, expanded=True):
-        #col1, col2, col3, col4, col5 = st.beta_columns(5)
-        if os.path.exists(imgpath):
-            image = Image.open(imgpath)
-            st.image(image, output_format="jpeg", use_column_width="auto")
-        if os.path.exists(mp3path):
-            audio_file = open(mp3path, 'rb')
-            audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/mp3')
-        else:
-            st.info("準備中です！！！")
+def show_radio(title, imgpath, mp3path):
+    st.subheader(title)
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format="jpeg", use_column_width="auto")
+    if os.path.exists(mp3path):
+        audio_file = open(mp3path, 'rb')
+        audio_bytes = audio_file.read()
+        st.audio(audio_bytes, format='audio/mp3')
+    else:
+        st.info("準備中です！！！")
 
 def main():
     initialization()
 
     ## Body ##
     #st.title("マツイキョースケのオールナイトニッポン🍆📻")
-    open_radio_expander("#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)", '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3')
-    st.write("To be continued ...")
+    list_radio = ["#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)", "#2 準備中"]
+    option = st.selectbox("コンテンツを選択", list_radio)
+    if option == "#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)":
+        show_radio("#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)", '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3')
+    #st.write("To be continued ...")
     #open_radio_expander("#2 「珍苗字東京大決戦〜城之内死す〜」 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)", '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3')
     #open_radio_expander("#3 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/03_radio_no3.jpg', '02_radio/03_radio_no3.mp3')
     #open_radio_expander("#4 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/04_radio_no4.jpg', '02_radio/04_radio_no4.mp3')
