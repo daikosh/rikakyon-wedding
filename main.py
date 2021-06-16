@@ -3,6 +3,7 @@ import importlib
 homepage = importlib.import_module("01_homepage.main")
 radio = importlib.import_module("02_radio.main")
 profile = importlib.import_module("03_profile.main")
+party1 = importlib.import_module("04_party1.main")
 
 ## Parameters ##
 USERNAME = "rikakyon"
@@ -29,6 +30,7 @@ def initialization():
     global PAGES
     PAGES = {
         "ご挨拶": homepage,
+        "結婚式情報": party1,
         "プロフィール": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio
         #"二人の生い立ち": homepage,
