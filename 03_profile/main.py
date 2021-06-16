@@ -46,17 +46,17 @@ def main():
         with col1:
             show_image("03_profile/05_akuzawa.png", "png")
             write_text("阿久澤 拓也", "24", "Black")
-            write_text("アイデア・エンジニア", "16", "Black")
+            write_text("変態", "16", "Black")
             show_image("03_profile/02_daikosh.png", "png")
             write_text("松岡 大起", "24", "Black")
-            write_text("エンジニア", "16", "Black")
+            write_text("婚活", "16", "Black")
         with col2:
             show_image("03_profile/04_rinrin.png", "png")
             write_text("林 寛人", "24", "Black")
-            write_text("営業", "16", "Black")
+            write_text("IWSP", "16", "Black")
             show_image("03_profile/06_nobuaki.png", "png")
             write_text("吉種 伸彰", "24", "Black")
-            write_text("経歴", "16", "Black")
+            write_text("教授", "16", "Black")
 
 if __name__ == "__main__":
     main()
