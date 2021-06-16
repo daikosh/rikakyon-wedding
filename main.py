@@ -2,6 +2,7 @@ import streamlit as st
 import importlib
 homepage = importlib.import_module("01_homepage.main")
 radio = importlib.import_module("02_radio.main")
+profile = importlib.import_module("03_profile.main")
 
 ## Parameters ##
 USERNAME = "rikakyon"
@@ -28,6 +29,7 @@ def initialization():
     global PAGES
     PAGES = {
         "ご挨拶": homepage,
+        "プロフィール": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio
         #"二人の生い立ち": homepage,
         #"二人の家族構成": homepage,
