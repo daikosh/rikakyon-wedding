@@ -23,8 +23,8 @@ def show_image(imgpath, type):
         image = Image.open(imgpath)
         st.image(image, output_format=type, use_column_width="auto")
 
-def write_text(text, fontsize, color):
-    new_text = '<p style="font-family:sans-serif; text-align: center; color:{}; font-size: {}px;">{}</p>'.format(color, fontsize, text)
+def write_text(text, fontsize, color, align):
+    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
 def main():
@@ -35,28 +35,34 @@ def main():
         col1, col2 = st.beta_columns(2)
         with col1:
             show_image("03_profile/01_kyosuke.png", "png")
-            write_text("松井 響介", "24", "Black")
-            write_text("代表取締役AGO", "16", "Black")
+            write_text("松井 響介", "24", "Black", "center")
+            write_text("代表取締役AGO", "16", "Black", "center")
+            write_text("顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎顎", "14", "Black", "justify")
         with col2:
             show_image("03_profile/07_rikako.png", "png")
-            write_text("犬飼 理香子", "24", "Black")
-            write_text("代表取締役AHO", "16", "Black")
+            write_text("犬飼 理香子", "24", "Black", "center")
+            write_text("代表取締役AHO", "16", "Black", "center")
+            write_text("阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆阿呆", "14", "Black", "justify")
     with st.beta_expander("執行役員", expanded=True):
         col1, col2 = st.beta_columns(2)
         with col1:
             show_image("03_profile/05_akuzawa.png", "png")
-            write_text("阿久澤 拓也", "24", "Black")
-            write_text("変態", "16", "Black")
+            write_text("阿久澤 拓也", "24", "Black", "center")
+            write_text("変態", "16", "Black", "center")
+            write_text("変態変態変態変態変態変態変態変態変態変態変態変態変態変態変態変態", "14", "Black", "justify")
             show_image("03_profile/02_daikosh.png", "png")
-            write_text("松岡 大起", "24", "Black")
-            write_text("婚活", "16", "Black")
+            write_text("松岡 大起", "24", "Black", "center")
+            write_text("婚活", "16", "Black", "center")
+            write_text("婚活婚活婚活婚活婚活婚活婚活婚活婚活婚活婚活婚活婚活婚活婚活婚活", "14", "Black", "justify")
         with col2:
             show_image("03_profile/04_rinrin.png", "png")
-            write_text("林 寛人", "24", "Black")
-            write_text("IWSP", "16", "Black")
+            write_text("林 寛人", "24", "Black", "center")
+            write_text("IWSP", "16", "Black", "center")
+            write_text("営業営業営業営業営業営業営業営業営業営業営業営業営業営業営業営業", "14", "Black", "justify")
             show_image("03_profile/06_nobuaki.png", "png")
-            write_text("吉種 伸彰", "24", "Black")
-            write_text("教授", "16", "Black")
+            write_text("吉種 伸彰", "24", "Black", "center")
+            write_text("教授", "16", "Black", "center")
+            write_text("教授教授教授教授教授教授教授教授教授教授教授教授教授教授教授教授", "14", "Black", "justify")
 
 if __name__ == "__main__":
     main()

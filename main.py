@@ -83,8 +83,10 @@ def main():
         selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
         page = PAGES[selection]
         page.main()
-    else:
+    elif login_button:
         st.warning("ユーザ名またはパスワードが間違っています / Incorrect Username or Password")
+    else:
+        pass
 
     ## Footer ##
     st.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
