@@ -31,7 +31,7 @@ def main():
     initialization()
 
     ## Body ##
-    with st.beta_expander("取締役"):
+    with st.beta_expander("取締役", expanded=True):
         col1, col2 = st.beta_columns(2)
         with col1:
             show_image("03_profile/01_kyosuke.png", "png")
@@ -41,7 +41,7 @@ def main():
             show_image("03_profile/07_rikako.png", "png")
             write_text("犬飼 理香子", "24", "Black")
             write_text("代表取締役AHO", "16", "Black")
-    with st.beta_expander("執行役員"):
+    with st.beta_expander("執行役員", expanded=True):
         col1, col2 = st.beta_columns(2)
         with col1:
             show_image("03_profile/05_akuzawa.png", "png")
