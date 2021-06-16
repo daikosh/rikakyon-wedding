@@ -11,7 +11,7 @@ PASSWORD = "0326"
 
 ## Page Config ##
 st.set_page_config(
-    page_title="犬飼響介 結婚式 2次会専用HP",
+    page_title="株式会社 アゴリーチ",
     page_icon="🎊",
     #layout="wide",
     initial_sidebar_state="expanded"
@@ -29,9 +29,16 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 def initialization():
     global PAGES
     PAGES = {
-        "ご挨拶": homepage,
+        "ニュース": homepage,
+        "会社概要": homepage,
+        "企業理念・ビジョン": homepage,
+        "サステイナビリティ": homepage,
+        "役員一覧": profile,
+        "トップメッセージ": homepage,
+        "事業展開": homepage,
+        "IR情報": homepage,
+        "採用情報": homepage,
         "結婚式情報": party1,
-        "プロフィール": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio
         #"二人の生い立ち": homepage,
         #"二人の家族構成": homepage,
@@ -80,7 +87,7 @@ def main():
     if is_authenticated(username, password):
         #clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        st.title("松井響介&犬飼理香子 結婚式 二次会特設サイト〜Just Married!〜")
+        st.title("株式会社 アゴリーチ")
         st.title("")
         selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
         page = PAGES[selection]
