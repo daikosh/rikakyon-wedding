@@ -63,12 +63,11 @@ def generate_blocks():
 
 def main():
     initialization()
-
     ## Login Section ##
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
     username = login_expander.text_input("ユーザ名 / Username")
     password = login_expander.text_input("パスワード / Password", value="", type="password")
-    login_checkbox = login_expander.checkbox("ログイン / LOGIN")
+    login_button = login_expander.button("ログイン / LOGIN")
 
     #login_expander.info("Authorized Personnel Only")
     login_expander.subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
@@ -76,17 +75,16 @@ def main():
     ## Body ##
     #blocks = generate_blocks()
     #generate_text(blocks)
-    if login_checkbox:
-        if is_authenticated(username, password):
-            #clear_blocks(blocks)
-            login_expander.success("Logged / ログインに成功しました。")
-            st.title("松井響介&犬飼理香子 結婚式 二次会特設サイト〜Just Married!〜")
-            st.title("")
-            selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
-            page = PAGES[selection]
-            page.main()
-        else:
-            st.warning("ユーザ名またはパスワードが間違っています / Incorrect Username or Password")
+    if is_authenticated(username, password):
+        #clear_blocks(blocks)
+        login_expander.success("Logged / ログインに成功しました。")
+        st.title("松井響介&犬飼理香子 結婚式 二次会特設サイト〜Just Married!〜")
+        st.title("")
+        selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
+        page = PAGES[selection]
+        page.main()
+    else:
+        st.warning("ユーザ名またはパスワードが間違っています / Incorrect Username or Password")
 
     ## Footer ##
     st.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
