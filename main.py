@@ -86,8 +86,6 @@ def main():
         selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
         page = PAGES[selection]
         page.main()
-    elif login_button:
-        st.warning("ユーザ名またはパスワードが間違っています / Incorrect Username or Password")
     else:
         pass
 
