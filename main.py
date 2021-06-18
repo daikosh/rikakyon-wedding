@@ -29,11 +29,10 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 def initialization():
     global PAGES
     PAGES = {
-        "ニュース": homepage,
-        "会社概要": homepage,
-        "役員一覧": profile,
+        "ご挨拶": homepage,
         "結婚式二次会情報": party,
-        "マツイキョースケのオールナイトニッポン🍆📻": radio
+        "マツイキョースケのオールナイトニッポン🍆📻": radio,
+        "運営メンバー": profile
         #"二人の生い立ち": homepage,
         #"二人の家族構成": homepage,
         #"犬神家の歴史": homepage,
@@ -81,7 +80,7 @@ def main():
     if is_authenticated(username, password):
         #clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        st.title("松井響介・犬飼理香子 結婚式二次会 特設サイト")
+        st.title("松井響介・犬飼理香子 結婚式二次会 特設サイト 〜〜 ")
         st.title("")
         selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
         page = PAGES[selection]
