@@ -19,7 +19,7 @@ def download_link(object_to_download, download_filename, download_link_text):
     return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
 
 def open_radio_expander(title, imgpath, mp3path):
-    with.beta_expander(title, expanded=True):
+    with st.beta_expander(title, expanded=True):
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
             st.image(image, output_format="jpeg", use_column_width="auto")
