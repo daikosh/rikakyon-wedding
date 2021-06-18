@@ -18,17 +18,17 @@ def download_link(object_to_download, download_filename, download_link_text):
     b64 = base64.b64encode(object_to_download.encode()).decode()
     return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
 
-def show_radio(title, imgpath, mp3path):
-    st.subheader(title)
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        st.image(image, output_format="jpeg", use_column_width="auto")
-    if os.path.exists(mp3path):
-        audio_file = open(mp3path, 'rb')
-        audio_bytes = audio_file.read()
-        st.audio(audio_bytes, format='audio/mp3')
-    else:
-        st.info("準備中です！！！")
+def open_radio_expander(title, imgpath, mp3path):
+    with.beta_expander(title, expanded=True):
+        if os.path.exists(imgpath):
+            image = Image.open(imgpath)
+            st.image(image, output_format="jpeg", use_column_width="auto")
+        if os.path.exists(mp3path):
+            audio_file = open(mp3path, 'rb')
+            audio_bytes = audio_file.read()
+            st.audio(audio_bytes, format='audio/mp3')
+        else:
+            st.info("準備中です！！！")
 
 def main():
     initialization()
