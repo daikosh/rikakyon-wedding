@@ -11,7 +11,7 @@ PASSWORD = "0326"
 
 ## Page Config ##
 st.set_page_config(
-    page_title="株式会社 アゴリーチ",
+    page_title="結婚式二次会 特設サイト",
     page_icon="🎊",
     #layout="wide",
     initial_sidebar_state="expanded"
@@ -81,7 +81,7 @@ def main():
     if is_authenticated(username, password):
         #clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        st.title("株式会社 アゴリーチ")
+        st.title("松井響介・犬飼響介 結婚式二次会 特設サイト")
         st.title("")
         selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
         page = PAGES[selection]
