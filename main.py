@@ -81,7 +81,7 @@ def main():
     if is_authenticated(username, password):
         #clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        st.title("松井響介・犬飼響介 結婚式二次会 特設サイト")
+        st.title("松井響介・犬飼理香子 結婚式二次会 特設サイト")
         st.title("")
         selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
         page = PAGES[selection]
