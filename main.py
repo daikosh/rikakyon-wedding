@@ -70,7 +70,7 @@ def main():
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
     username = login_expander.text_input("ユーザ名 / Username")
     password = login_expander.text_input("パスワード / Password", value="", type="password")
-    login_button = login_expander.button("ログイン / LOGIN")
+    #login_button = login_expander.button("ログイン / LOGIN")
 
     #login_expander.info("Authorized Personnel Only")
     login_expander.subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
