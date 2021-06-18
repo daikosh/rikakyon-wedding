@@ -4,6 +4,7 @@ homepage = importlib.import_module("01_homepage.main")
 radio = importlib.import_module("02_radio.main")
 profile = importlib.import_module("03_profile.main")
 party = importlib.import_module("04_party1.main")
+radio_glee = importlib.import_module("05_radio_glee.main")
 
 ## Parameters ##
 USERNAME = "rikakyon"
@@ -32,6 +33,7 @@ def initialization():
         "ご挨拶": homepage,
         "結婚式二次会情報": party,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
+        "〇〇〇〇〇のオールナイトニッポン0": radio_glee,
         "運営メンバー": profile
         #"二人の生い立ち": homepage,
         #"二人の家族構成": homepage,
