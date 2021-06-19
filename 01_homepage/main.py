@@ -26,6 +26,7 @@ def write_text(text, fontsize, color, align):
 def main():
     initialization()
     ## Body ##
+    imgpath = "01_homepage/logo.png"
     st.write("お久しぶりです。")
     st.write("結婚式二次会特設サイトにアクセスいただきありがとうございます。")
     st.write("二次会に参加する人もしない人も楽しんで頂けるような様々なコンテンツを配信していきます。")
