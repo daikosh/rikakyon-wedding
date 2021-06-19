@@ -56,7 +56,7 @@ def generate_blocks():
     return main_title, main_description, main_description_eng
 
 def generate_logo(blocks):
-    new_text = '<p style="font-family:sans-serif; text-align: center; font-size: 34px;">結婚式二次会　特設サイト</p>'
+    new_text = '<p style="font-family:sans-serif; text-align: center; font-size: 34px;">結婚式二次会<br>特設サイト</p>'
     blocks[0].markdown(new_text, unsafe_allow_html=True)
     imgpath = "logo.png"
     if os.path.exists(imgpath):
