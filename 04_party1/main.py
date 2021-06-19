@@ -30,7 +30,7 @@ def write_text(text, fontsize, color, align):
 def main():
     initialization()
     ## Title ##
-    #write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
+    write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
     imgpath = "04_party1/logo.png"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
