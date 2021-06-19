@@ -65,6 +65,10 @@ def generate_blocks():
 #    for block in blocks:
 #        block.empty()
 
+def write_text(text, fontsize, color, align):
+    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
+    st.markdown(new_text, unsafe_allow_html=True)
+
 def main():
     initialization()
     ## Login Section ##
@@ -82,7 +86,8 @@ def main():
     if is_authenticated(username, password):
         #clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        st.title("松井響介・犬飼理香子 結婚式二次会 特設サイト 〜〜 ")
+        write_text("松井響介・犬飼理香子 結婚式二次会 特設サイト", 24, "black", "center")
+        write_text("〜MAY THE FORCE BE WITH YOU〜", 24, "black", "center")
         #st.title("")
         selection = st.radio("", list(PAGES.keys()))
         page = PAGES[selection]
