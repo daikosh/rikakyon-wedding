@@ -30,6 +30,7 @@ def main():
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
         st.image(image, output_format="png", use_column_width="auto")
+    st.write("お久しぶりです。")
     st.write("結婚式二次会特設サイトにアクセスいただきありがとうございます。")
     st.write("二次会に参加する人もしない人も楽しんで頂けるような様々なコンテンツを配信していきます。")
     st.write("要望、リクエスト等があれば是非LINEへメッセージを送ってください。")
