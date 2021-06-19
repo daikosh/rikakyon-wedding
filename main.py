@@ -84,7 +84,7 @@ def main():
     if is_authenticated(username, password):
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
+        #write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
         selection = st.radio("", list(PAGES.keys()))
 
 
