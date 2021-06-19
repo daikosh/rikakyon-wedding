@@ -5,7 +5,7 @@ from PIL import Image
 homepage = importlib.import_module("01_homepage.main")
 radio = importlib.import_module("02_radio.main")
 profile = importlib.import_module("03_profile.main")
-party = importlib.import_module("04_party1.main")
+party = importlib.import_module("04_about.main")
 radio_glee = importlib.import_module("05_radio_glee.main")
 
 ## Parameters ##
