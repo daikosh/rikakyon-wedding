@@ -31,7 +31,7 @@ def initialization():
     global PAGES
     PAGES = {
         "GREETING": homepage,
-        "": party,
+        "ABOUT": party,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         "〇〇〇〇〇のオールナイトニッポン0": radio_glee,
         "PROFILES": profile
@@ -84,7 +84,7 @@ def main():
         login_expander.success("Logged / ログインに成功しました。")
         st.title("松井響介・犬飼理香子 結婚式二次会 特設サイト 〜〜 ")
         #st.title("")
-        selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
+        selection = st.radio("", list(PAGES.keys()))
         page = PAGES[selection]
         page.main()
     else:
