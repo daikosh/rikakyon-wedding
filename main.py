@@ -51,15 +51,8 @@ def generate_blocks():
     main_description_eng = st.empty()
     return main_title, main_description, main_description_eng
 
-def generate_text(blocks):
-    imgpath = "logo.png"
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        blocks[0].image(image, output_format="png", use_column_width="auto")
-
 def generate_logo(blocks):
     imgpath = "logo.png"
-    st.write("LOGO")
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
         blocks[0].image(image, output_format="png", use_column_width="auto")
@@ -77,7 +70,7 @@ def main():
 
     # Logo #
     blocks = generate_blocks()
-    generate_text(blocks)
+    generate_logo(blocks)
 
     ## Login Section ##
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
@@ -91,11 +84,8 @@ def main():
     if is_authenticated(username, password):
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        #write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
-        block2 = generate_blocks()
+        write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
         selection = st.radio("", list(PAGES.keys()))
-        if selection == "homepage":
-            generate_logo(blocks2)
         page = PAGES[selection]
         page.main()
     else:
