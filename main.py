@@ -104,7 +104,15 @@ def main():
         login_expander.success("Logged / ログインに成功しました。")
         write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
         logo_blocks = generate_logo_blocks()
+        imgpath = "line.png"
+        if os.path.exists(imgpath):
+            image = Image.open(imgpath)
+            st.image(image, output_format="png", use_column_width="auto")
         selection = st.radio("", list(PAGES.keys()))
+        imgpath = "line.png"
+        if os.path.exists(imgpath):
+            image = Image.open(imgpath)
+            st.image(image, output_format="png", use_column_width="auto")
         if selection == "GREETING":
             generate_logo(logo_blocks, "")
         elif selection == "ABOUT":
