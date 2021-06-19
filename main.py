@@ -52,10 +52,11 @@ def generate_blocks():
     return main_title, main_description, main_description_eng
 
 def generate_logo(blocks):
+    blocks[0] = write_text("結婚式二次会 特設サイト", 32, "black", "center")
     imgpath = "logo.png"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
-        blocks[0].image(image, output_format="png", use_column_width="auto")
+        blocks[1].image(image, output_format="png", use_column_width="auto")
 
 def clear_blocks(blocks):
     for block in blocks:
