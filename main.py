@@ -84,7 +84,7 @@ def main():
         login_expander.success("Logged / ログインに成功しました。")
         st.title("松井響介・犬飼理香子 結婚式二次会 特設サイト 〜〜 ")
         st.title("")
-        selection = st.radio("コンテンツ / Contents", list(PAGES.keys()))
+        selection = st.radio("", list(PAGES.keys()))
         page = PAGES[selection]
         page.main()
     else:
