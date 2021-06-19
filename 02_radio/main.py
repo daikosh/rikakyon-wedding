@@ -29,7 +29,7 @@ def open_radio_expander(title, imgpath, mp3path):
             st.audio(audio_bytes, format='audio/mp3')
         else:
             st.info("準備中です！！！")
-            
+
 def write_text(text, fontsize, color, align):
     new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
@@ -37,7 +37,6 @@ def write_text(text, fontsize, color, align):
 def main():
     initialization()
     ## Title ##
-    write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
     imgpath = "02_radio/logo.png"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
