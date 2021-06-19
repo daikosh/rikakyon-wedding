@@ -1,6 +1,7 @@
 import streamlit as st
 import importlib
 import os
+from PIL import Image
 homepage = importlib.import_module("01_homepage.main")
 radio = importlib.import_module("02_radio.main")
 profile = importlib.import_module("03_profile.main")
