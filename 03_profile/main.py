@@ -38,12 +38,12 @@ def main():
         with col1:
             show_image("03_profile/01_kyosuke.png", "png")
             write_text("松井 響介", "24", "Black", "center")
-            write_text("新郎", "16", "Black", "center")
+            #write_text("新郎", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
         with col2:
             show_image("03_profile/07_rikako.png", "png")
             write_text("犬飼 理香子", "24", "Black", "center")
-            write_text("新婦", "16", "Black", "center")
+            #write_text("新婦", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
     #show_image("03_profile/22_executive.png", "png")
     with st.beta_expander("企画メンバー", expanded=True):
