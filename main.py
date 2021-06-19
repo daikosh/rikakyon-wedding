@@ -31,7 +31,7 @@ def initialization():
     global PAGES
     PAGES = {
         "GREETING": homepage,
-        "INFORMATION": party,
+        "ABOUT PARTY": party,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         "〇〇〇〇〇のオールナイトニッポン0": radio_glee,
         "PROFILES": profile
