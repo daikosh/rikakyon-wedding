@@ -105,7 +105,6 @@ def main():
         write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
         logo_blocks = generate_logo_blocks()
         selection = st.radio("", list(PAGES.keys()))
-        st.write(selection)
         if selection == "GREETING":
             generate_logo(logo_blocks, "")
         elif selection == "ABOUT":
