@@ -56,7 +56,7 @@ def generate_blocks():
     return main_title, main_description, main_description_eng
 
 def generate_logo(blocks):
-    new_text = '<p style="font-family:sans-serif; text-align: center; font-size: 30px;">結婚式二次会　特設サイト</p>'
+    new_text = '<p style="font-family:sans-serif; text-align: center; font-size: 34px;">結婚式二次会　特設サイト</p>'
     blocks[0].markdown(new_text, unsafe_allow_html=True)
     imgpath = "logo.png"
     if os.path.exists(imgpath):
@@ -86,7 +86,7 @@ def main():
     if is_authenticated(username, password):
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        write_text("響介・理香子　結婚式二次会　特設サイト", 30, "black", "center")
+        write_text("響介・理香子　結婚式二次会　特設サイト", 34, "black", "center")
         selection = st.radio("", list(PAGES.keys()))
         page = PAGES[selection]
         page.main()
