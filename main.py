@@ -68,10 +68,6 @@ def write_text(text, fontsize, color, align):
 def main():
     initialization()
 
-    # Logo #
-    blocks = generate_blocks()
-    generate_logo(blocks)
-
     ## Login Section ##
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
     username = login_expander.text_input("ユーザ名 / Username")
@@ -79,6 +75,10 @@ def main():
 
     #login_expander.info("Authorized Personnel Only")
     login_expander.subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
+
+    # Logo #
+    blocks = generate_blocks()
+    generate_logo(blocks)
 
     ## Body ##
     if is_authenticated(username, password):
