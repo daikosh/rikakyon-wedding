@@ -32,7 +32,7 @@ def main():
 
     ## Body ##
     #show_image("03_profile/21_directors.png", "png")
-    with st.beta_expander("新郎・新婦", expanded=True):
+    with st.beta_expander("MAIN CAST", expanded=True):
     #st.header("取締役")
         col1, col2 = st.beta_columns(2)
         with col1:
@@ -46,7 +46,7 @@ def main():
             #write_text("新婦", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
     #show_image("03_profile/22_executive.png", "png")
-    with st.beta_expander("企画メンバー", expanded=True):
+    with st.beta_expander("PROJECT MEMBER", expanded=True):
     #st.header("執行役員")
         col1, col2 = st.beta_columns(2)
 
