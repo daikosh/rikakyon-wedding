@@ -32,7 +32,6 @@ def main():
         st.image(image, output_format="jpeg", use_column_width="auto")
     st.write("どうも、皆さん、おはこんばんにちは。\n\n二次会に参加する人もしない人も楽しんで頂けるような様々なコンテンツを配信していきます。\n\n要望、リクエスト等があれば是非LINEへメッセージを送ってください。")
     st.write("")
-    st.write("")
-    write_text("プロジェクトメンバー", 24, "black", "right")
+    write_text("プロジェクトメンバー一同", 16, "black", "right")
 if __name__ == "__main__":
     main()
