@@ -112,7 +112,7 @@ def main():
         if selection == "GREETING":
             generate_logo(logo_blocks, "")
         elif selection == "ABOUT":
-            generate_logo(logo_blocks, "04_party1/")
+            generate_logo(logo_blocks, "04_about/")
         elif selection == "PROFILE":
             generate_logo(logo_blocks, "03_profile/")
         elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
