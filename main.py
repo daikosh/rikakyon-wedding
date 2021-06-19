@@ -36,13 +36,6 @@ def initialization():
         "ABOUT": party,
         "PROFILES": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio
-        #"〇〇〇〇〇のオールナイトニッポン0": radio_glee
-        #"二人の生い立ち": homepage,
-        #"二人の家族構成": homepage,
-        #"犬神家の歴史": homepage,
-        #"松井家の歴史": homepage,
-        #"同志社交響楽団": homepage,
-        #"修道高校": homepage
     }
 
 
