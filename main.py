@@ -56,8 +56,6 @@ def generate_text(blocks):
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
         blocks[0].image(image, output_format="png", use_column_width="auto")
-    #blocks[1].title("犬飼響介 結婚式 2次会専用HP")
-    #blocks[2].subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
 
 def clear_blocks(blocks):
     for block in blocks:
@@ -70,10 +68,10 @@ def write_text(text, fontsize, color, align):
 def main():
     initialization()
 
-
     # Logo #
     blocks = generate_blocks()
     generate_text(blocks)
+
     ## Login Section ##
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
     username = login_expander.text_input("ユーザ名 / Username")
@@ -86,9 +84,6 @@ def main():
     if is_authenticated(username, password):
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
-        write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
-        #write_text("〜じゃけえ〜", , "black", "center")
-        #st.title("")
         selection = st.radio("", list(PAGES.keys()))
         page = PAGES[selection]
         page.main()

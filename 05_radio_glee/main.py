@@ -32,6 +32,12 @@ def open_radio_expander(title, imgpath, mp3path):
 
 def main():
     initialization()
+    ## Title ##
+    write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
+    imgpath = "05_radio_glee/logo.png"
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format="png", use_column_width="auto")
 
     ## Body ##
     #st.title("マツイキョースケのオールナイトニッポン🍆📻")
