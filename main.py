@@ -51,14 +51,17 @@ def generate_blocks():
     main_description_eng = st.empty()
     return main_title, main_description, main_description_eng
 
-#def generate_text(blocks):
-#    blocks[0].title("犬飼響介 結婚式 2次会専用HP")
-#    blocks[1].info("Authorized Personnel Only")
-#    blocks[2].subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
+def generate_text(blocks):
+    imgpath = "logo.png"
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        blocks[0].image(image, output_format="png", use_column_width="auto")
+    #blocks[1].title("犬飼響介 結婚式 2次会専用HP")
+    #blocks[2].subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
 
-#def clear_blocks(blocks):
-#    for block in blocks:
-#        block.empty()
+def clear_blocks(blocks):
+    for block in blocks:
+        block.empty()
 
 def write_text(text, fontsize, color, align):
     new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
@@ -66,24 +69,22 @@ def write_text(text, fontsize, color, align):
 
 def main():
     initialization()
-    imgpath = "logo.png"
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        st.image(image, output_format="png", use_column_width="auto")
+
+
+    # Logo #
+    blocks = generate_blocks()
+    generate_text(blocks)
     ## Login Section ##
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
     username = login_expander.text_input("ユーザ名 / Username")
     password = login_expander.text_input("パスワード / Password", value="", type="password")
-    #login_button = login_expander.button("ログイン / LOGIN")
 
     #login_expander.info("Authorized Personnel Only")
     login_expander.subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
 
     ## Body ##
-    #blocks = generate_blocks()
-    #generate_text(blocks)
     if is_authenticated(username, password):
-        #clear_blocks(blocks)
+        clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
         write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
         #write_text("〜じゃけえ〜", , "black", "center")
@@ -95,8 +96,7 @@ def main():
         pass
 
     ## Footer ##
-    st.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
-    #st.sidebar.write("Copyright © 2021 Inukai-Kyosuke Wedding Association. All Rights Reserved.")
+    st.write("Copyright © 2021 EN-Jakee Association. All Rights Reserved.")
 
 if __name__ == "__main__":
     main()
