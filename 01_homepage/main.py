@@ -26,7 +26,7 @@ def write_text(text, fontsize, color, align):
 def main():
     initialization()
     ## Title ##
-    write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
+    write_text("響介・理香子　結婚式二次会 特設サイト", 32, "black", "center")
     imgpath = "01_homepage/logo.png"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
@@ -39,6 +39,6 @@ def main():
     st.write("二次会に参加する人もしない人も楽しんで頂けるような様々なコンテンツを配信していきます。")
     st.write("要望、リクエスト等があれば是非LINEへメッセージを送ってください。")
     st.write("")
-    write_text("プロジェクトメンバー　一同", 16, "black", "right")
+    write_text("EN-Jakeeプロジェクトメンバー　一同", 16, "black", "right")
 if __name__ == "__main__":
     main()
