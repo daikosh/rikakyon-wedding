@@ -87,7 +87,11 @@ def main():
         #clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
         write_text("松井響介・犬飼理香子 結婚式二次会 特設サイト", 32, "black", "center")
-        write_text("〜じゃけえ〜", 42, "black", "center")
+        imgpath = "01_homepage/jakee.png"
+        if os.path.exists(imgpath):
+            image = Image.open(imgpath)
+            st.image(image, output_format="png", use_column_width="auto")
+        #write_text("〜じゃけえ〜", , "black", "center")
         #st.title("")
         selection = st.radio("", list(PAGES.keys()))
         page = PAGES[selection]
