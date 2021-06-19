@@ -31,10 +31,10 @@ def main():
     initialization()
     ## Title ##
     #write_text("響介・理香子 結婚式二次会 特設サイト", 32, "black", "center")
-    imgpath = "04_party1/logo.png"
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        st.image(image, output_format="png", use_column_width="auto")
+    # imgpath = "04_party1/logo.png"
+    # if os.path.exists(imgpath):
+    #     image = Image.open(imgpath)
+    #     st.image(image, output_format="png", use_column_width="auto")
 
     ## Body ##
     with st.beta_expander("日時・会場", expanded=True):

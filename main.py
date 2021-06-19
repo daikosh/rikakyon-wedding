@@ -55,7 +55,7 @@ def generate_blocks():
     main_description_eng = st.empty()
     return main_title, main_description, main_description_eng
 
-def generate_logo(blocks):
+def generate_text(blocks):
     #new_text = '<p style="font-family:sans-serif; text-align: center; font-size: 34px;">結婚式二次会<br>特設サイト</p>'
     #blocks[0].markdown(new_text, unsafe_allow_html=True)
     imgpath = "logo.png"
@@ -67,12 +67,26 @@ def clear_blocks(blocks):
     for block in blocks:
         block.empty()
 
+def generate_logo_blocks():
+    main_title = st.empty()
+    main_description = st.empty()
+    main_description_eng = st.empty()
+    return main_title, main_description, main_description_eng
+
+def generate_logo(blocks, page):
+    #new_text = '<p style="font-family:sans-serif; text-align: center; font-size: 34px;">結婚式二次会<br>特設サイト</p>'
+    #blocks[0].markdown(new_text, unsafe_allow_html=True)
+    imgpath = "{}logo.png".format(page)
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        blocks[0].image(image, output_format="png", use_column_width="auto")
+
 def main():
     initialization()
 
     # Logo #
     blocks = generate_blocks()
-    generate_logo(blocks)
+    generate_text(blocks)
 
     ## Login Section ##
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
@@ -89,11 +103,18 @@ def main():
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
         write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
-        imgpath = "logo.png"
-        if os.path.exists(imgpath):
-            image = Image.open(imgpath)
-            st.image(image, output_format="png", use_column_width="auto")
+        logo_blocks = generate_logo_blocks()
         selection = st.radio("", list(PAGES.keys()))
+        st.write(selection)
+        if selection == "GREETING":
+            generate_logo(logo_blocks, "")
+        elif selection == "ABOUT":
+            generate_logo(logo_blocks, "04_party1/")
+        elif selection == "PROFILES":
+            generate_logo(logo_blocks, "03_profile/")
+        elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
+            generate_logo(logo_blocks, "02_radio/")
+
         page = PAGES[selection]
         page.main()
     else:
