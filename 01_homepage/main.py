@@ -26,10 +26,10 @@ def write_text(text, fontsize, color, align):
 def main():
     initialization()
     ## Body ##
-    imgpath = "01_homepage/01_main.jpg"
+    imgpath = "01_homepage/logo.png"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
-        st.image(image, output_format="jpeg", use_column_width="auto")
+        st.image(image, output_format="png", use_column_width="auto")
     st.write("結婚式二次会特設サイトにアクセスいただきありがとうございます。")
     st.write("二次会に参加する人もしない人も楽しんで頂けるような様々なコンテンツを配信していきます。")
     st.write("要望、リクエスト等があれば是非LINEへメッセージを送ってください。")
