@@ -34,7 +34,7 @@ def initialization():
         "結婚式二次会情報": party,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         "〇〇〇〇〇のオールナイトニッポン0": radio_glee,
-        "運営メンバー": profile
+        "Profile": profile
         #"二人の生い立ち": homepage,
         #"二人の家族構成": homepage,
         #"犬神家の歴史": homepage,
