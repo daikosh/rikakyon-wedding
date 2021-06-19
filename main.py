@@ -34,7 +34,7 @@ def initialization():
     PAGES = {
         "GREETING": homepage,
         "ABOUT": party,
-        "PROFILES": profile,
+        "PROFILE": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio
     }
 
@@ -113,7 +113,7 @@ def main():
             generate_logo(logo_blocks, "")
         elif selection == "ABOUT":
             generate_logo(logo_blocks, "04_party1/")
-        elif selection == "PROFILES":
+        elif selection == "PROFILE":
             generate_logo(logo_blocks, "03_profile/")
         elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
             generate_logo(logo_blocks, "02_radio/")
