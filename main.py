@@ -45,6 +45,10 @@ def is_authenticated(username, password):
     else:
         return False
 
+def write_text(text, fontsize, color, align):
+    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
+    st.markdown(new_text, unsafe_allow_html=True)
+
 def generate_blocks():
     main_title = st.empty()
     main_description = st.empty()
@@ -61,10 +65,6 @@ def generate_logo(blocks):
 def clear_blocks(blocks):
     for block in blocks:
         block.empty()
-
-def write_text(text, fontsize, color, align):
-    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
-    st.markdown(new_text, unsafe_allow_html=True)
 
 def main():
     initialization()
