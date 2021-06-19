@@ -37,12 +37,12 @@ def main():
         col1, col2 = st.beta_columns(2)
         with col1:
             show_image("03_profile/01_kyosuke.png", "png")
-            write_text("松井 響介", "24", "Black", "center")
+            write_text("Kyosuke Matsui", "24", "Black", "center")
             #write_text("新郎", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
         with col2:
             show_image("03_profile/07_rikako.png", "png")
-            write_text("犬飼 理香子", "24", "Black", "center")
+            write_text("Rikako Inukai", "24", "Black", "center")
             #write_text("新婦", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
     #show_image("03_profile/22_executive.png", "png")
@@ -52,20 +52,20 @@ def main():
 
         with col1:
             show_image("03_profile/05_akuzawa.png", "png")
-            write_text("阿久澤 拓也", "24", "Black", "center")
+            write_text("Takuya Akuzawa", "24", "Black", "center")
             #write_text("変態", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
             show_image("03_profile/02_daikosh.png", "png")
-            write_text("松岡 大起", "24", "Black", "center")
+            write_text("daikosh", "24", "Black", "center")
             #write_text("婚活", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
         with col2:
             show_image("03_profile/04_rinrin.png", "png")
-            write_text("林 寛人", "24", "Black", "center")
+            write_text("Hiroto Hayashi", "24", "Black", "center")
             #write_text("IWSP", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
             show_image("03_profile/06_nobuaki.png", "png")
-            write_text("吉種 伸彰", "24", "Black", "center")
+            write_text("Nobuaki Yoshitane", "24", "Black", "center")
             #write_text("教授", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
 
