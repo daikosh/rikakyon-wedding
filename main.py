@@ -36,6 +36,7 @@ def initialization():
         "ABOUT": party,
         "PROFILE": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio
+        #"理香子": homepage
     }
 
 
