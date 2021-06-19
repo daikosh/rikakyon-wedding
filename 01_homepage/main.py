@@ -19,6 +19,10 @@ def download_link(object_to_download, download_filename, download_link_text):
     b64 = base64.b64encode(object_to_download.encode()).decode()
     return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
 
+def write_text(text, fontsize, color, align):
+    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
+    st.markdown(new_text, unsafe_allow_html=True)
+
 def main():
     initialization()
     ## Body ##
@@ -29,6 +33,6 @@ def main():
     st.write("どうも、皆さん、おはこんばんにちは。\n\n二次会に参加する人もしない人も楽しんで頂けるような様々なコンテンツを配信していきます。\n\n要望、リクエスト等があれば是非LINEへメッセージを送ってください。")
     st.write("")
     st.write("")
-    st.write("プロジェクトメンバー")
+    st.write_text("プロジェクトメンバー", 24, "black", "right")
 if __name__ == "__main__":
     main()
