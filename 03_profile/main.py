@@ -61,7 +61,7 @@ def main():
             write_text("Takuya Akuzawa", "24", "Black", "center")
             #write_text("変態", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
-            show_image("03_profile/02_daikosh.png", "png")
+            show_image("03_profile/02_daikosh2.png", "png")
             write_text("daikosh", "24", "Black", "center")
             #write_text("婚活", "16", "Black", "center")
             #write_text("", "14", "Black", "justify")
