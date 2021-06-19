@@ -33,10 +33,10 @@ def main():
     #     st.image(image, output_format="png", use_column_width="auto")
 
     ## Body ##
-    st.write("結婚式二次会特設サイトにアクセスいただきありがとうございます。")
-    st.write("二次会に参加する人もしない人も楽しんで頂けるような様々なコンテンツを配信していきます。")
-    st.write("要望、リクエスト等があれば是非LINEへメッセージを送ってください。")
-    st.write("")
+    st.subheader("結婚式二次会特設サイトにアクセスいただきありがとうございます。")
+    st.subheader("二次会に参加する人もしない人も楽しんで頂けるような様々なコンテンツを配信していきます。")
+    st.subheader("要望、リクエスト等があれば是非LINEへメッセージを送ってください。")
+    st.subheader("")
     write_text("EN-Jakeeプロジェクトメンバー　一同", 16, "black", "right")
 if __name__ == "__main__":
     main()
