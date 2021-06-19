@@ -87,7 +87,7 @@ def main():
         #clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
         write_text("松井響介・犬飼理香子 結婚式二次会 特設サイト", 32, "black", "center")
-        write_text("〜MAY THE FORCE BE WITH YOU〜", 32, "black", "center")
+        write_text("〜MAY THE FORCE BE WITH YOU〜", 28, "black", "center")
         #st.title("")
         selection = st.radio("", list(PAGES.keys()))
         page = PAGES[selection]
