@@ -7,6 +7,8 @@ radio = importlib.import_module("02_radio.main")
 profile = importlib.import_module("03_profile.main")
 party = importlib.import_module("04_about.main")
 radio_glee = importlib.import_module("05_radio_glee.main")
+rikako = importlib.import_module("06_rikako.main")
+timeline = importlib.import_module("07_timeline.main")
 
 ## Parameters ##
 USERNAME = "rikakyon"
@@ -16,7 +18,6 @@ PASSWORD = "0326"
 st.set_page_config(
     page_title="結婚式二次会 特設サイト",
     page_icon="🎊",
-    #layout="wide",
     initial_sidebar_state="expanded"
 )
 
@@ -35,8 +36,10 @@ def initialization():
         "GREETING": homepage,
         "ABOUT": party,
         "PROFILE": profile,
-        "マツイキョースケのオールナイトニッポン🍆📻": radio
-        #"理香子": homepage
+        "マツイキョースケのオールナイトニッポン🍆📻": radio,
+        #"同響グリーのオールナイトニッポン0🔞": radio_glee,
+        #"わんこ旅🐶🐾": rikako
+        #"二人と同響の年表": timeline
     }
 
 
@@ -57,8 +60,6 @@ def generate_blocks():
     return main_title, main_description, main_description_eng
 
 def generate_text(blocks):
-    #new_text = '<p style="font-family:sans-serif; text-align: center; font-size: 34px;">結婚式二次会<br>特設サイト</p>'
-    #blocks[0].markdown(new_text, unsafe_allow_html=True)
     imgpath = "logo.png"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
@@ -75,8 +76,6 @@ def generate_logo_blocks():
     return main_title, main_description, main_description_eng
 
 def generate_logo(blocks, page):
-    #new_text = '<p style="font-family:sans-serif; text-align: center; font-size: 34px;">結婚式二次会<br>特設サイト</p>'
-    #blocks[0].markdown(new_text, unsafe_allow_html=True)
     imgpath = "{}logo.png".format(page)
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
@@ -93,16 +92,13 @@ def main():
     login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
     username = login_expander.text_input("ユーザ名 / Username")
     password = login_expander.text_input("パスワード / Password", value="", type="password")
-
-    #login_expander.info("Authorized Personnel Only")
     login_expander.subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
 
-
-
-    ## Body ##
     if is_authenticated(username, password):
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
+
+        ## Body ##
         write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
         logo_blocks = generate_logo_blocks()
         selection = st.radio("", list(PAGES.keys()))
@@ -118,11 +114,15 @@ def main():
             generate_logo(logo_blocks, "03_profile/")
         elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
             generate_logo(logo_blocks, "02_radio/")
+        elif selection == "わんこ旅🐶🐾":
+            generate_logo(logo_blocks, "06_rikako/")
+        elif selection == "二人と同響の年表":
+            generate_logo(logo_blocks, "")
+        elif selection == "同響グリーのオールナイトニッポン0🔞":
+            generate_logo(logo_blocks, "05_radio_glee/")
 
         page = PAGES[selection]
         page.main()
-    else:
-        pass
 
     ## Footer ##
     st.write("Copyright © 2021 EN-Jakee Association. All Rights Reserved.")
