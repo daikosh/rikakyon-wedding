@@ -22,7 +22,7 @@ st.set_page_config(
 )
 
 ## Hide Streamlit Official Menu ##
-max_width = 600
+max_width = 750
 padding_top = 5
 padding_right = 5
 padding_left = 5
