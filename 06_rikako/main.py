@@ -39,7 +39,6 @@ def main():
                 write_text("カタツムリはマクロレンズで寄っても逃げないのでとても撮りやすい。")
 
             elif n == 6:
-
                 write_text("うなだれてしまった。")
                 write_text("")
                 write_text("")
@@ -52,7 +51,6 @@ def main():
                 write_text("寄りで撮ったらどこで撮っても場所は関係ない。")
                 write_text("というわけで清水寺の紫陽花は以上。")
 
-
             elif n == 9:
                 write_text("続きましてこちらは京都の三室戸寺。")
 
@@ -62,7 +60,6 @@ def main():
 
             elif n == 11:
                 write_text("多種多様な紫陽花に圧倒される。")
-
 
             elif n == 12:
                 write_text("マクロレンズを手に入れるまではこれ以上寄るとピントが合わないのでこれが精一杯。")
@@ -88,13 +85,11 @@ def main():
                 write_text("")
                 write_text("女子受け間違いなし。")
 
-
             elif n == 17:
                 write_text("続きましては再び奈良へ。")
 
 
             elif n == 18:
-
                 write_text("ここ最近見つけた新たな紫陽花スポット。")
                 write_text("奈良の「矢田寺」。")
 
@@ -112,11 +107,8 @@ def main():
             elif n == 25:
                 write_text("服に限らず、バッグや水筒代わりに。")
 
-
             elif n == 26:
                 write_text("そんなこんなで矢田寺は本当におすすめです。")
-
-
 
             elif n == 27:
                 write_text("以上紫陽花だけのコラムでした。")
