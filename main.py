@@ -22,13 +22,53 @@ st.set_page_config(
 )
 
 ## Hide Streamlit Official Menu ##
+max_width = 800
+padding_top = 0
+padding_right = 0
+padding_left = 0
+padding_bottom = 0
+COLOR = "black"
+BACKGROUND_COLOR = "white"
 hide_streamlit_style = """
 <style>
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    .reportview-container .main .block-container{{
+        max-width: {max_width}px;
+        padding-top: {padding_top}rem;
+        padding-right: {padding_right}rem;
+        padding-left: {padding_left}rem;
+        padding-bottom: {padding_bottom}rem;
+    }}
+    .reportview-container .main {{
+        color: {COLOR};
+        background-color: {BACKGROUND_COLOR};
+    }}
+
+
 </style>
 """
+
+set_width_style =f"""
+<style>
+    .reportview-container .main .block-container{{
+        max-width: {max_width}px;
+        padding-top: {padding_top}rem;
+        padding-right: {padding_right}rem;
+        padding-left: {padding_left}rem;
+        padding-bottom: {padding_bottom}rem;
+    }}
+    .reportview-container .main {{
+        color: {COLOR};
+        background-color: {BACKGROUND_COLOR};
+    }}
+</style>
+"""
+
+
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.markdown(set_width_style, unsafe_allow_html=True)
+
 
 def initialization():
     global PAGES, PAGES_DEBUG
