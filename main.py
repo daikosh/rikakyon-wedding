@@ -22,11 +22,11 @@ st.set_page_config(
 )
 
 ## Hide Streamlit Official Menu ##
-max_width = 800
-padding_top = 0
-padding_right = 0
-padding_left = 0
-padding_bottom = 0
+max_width = 600
+padding_top = 5
+padding_right = 5
+padding_left = 5
+padding_bottom = 5
 COLOR = "black"
 BACKGROUND_COLOR = "white"
 hide_streamlit_style = """
