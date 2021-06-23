@@ -31,7 +31,7 @@ footer {visibility: hidden;}
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 def initialization():
-    global PAGES
+    global PAGES, PAGES_DEBUG
     PAGES = {
         "GREETING": homepage,
         "ABOUT": party,
@@ -41,13 +41,24 @@ def initialization():
         #"わんこ旅🐶🐾": rikako
         #"二人と同響の年表": timeline
     }
+    PAGES_DEBUG = {
+        "GREETING": homepage,
+        "ABOUT": party,
+        "PROFILE": profile,
+        "マツイキョースケのオールナイトニッポン🍆📻": radio,
+        #"同響グリーのオールナイトニッポン0🔞": radio_glee,
+        "わんこ旅🐶🐾": rikako
+        #"二人と同響の年表": timeline
+    }
 
 
 def is_authenticated(username, password):
     if username == USERNAME and password == PASSWORD:
-        return True
+        return 1
+    elif username == USERNAME and password == "0622":
+        return 2
     else:
-        return False
+        return 0
 
 def write_text(text, fontsize, color, align):
     new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
@@ -94,7 +105,7 @@ def main():
     password = login_expander.text_input("パスワード / Password", value="", type="password")
     login_expander.subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
 
-    if is_authenticated(username, password):
+    if is_authenticated(username, password) == 1:
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
 
@@ -123,9 +134,39 @@ def main():
 
         page = PAGES[selection]
         page.main()
+    elif is_authenticated(username, password) == 2:
+        clear_blocks(blocks)
+        login_expander.success("Debug Mode / デバッグモード！！！")
+
+        ## Body ##
+        write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
+        logo_blocks = generate_logo_blocks()
+        selection = st.radio("", list(PAGES_DEBUG.keys()))
+        imgpath = "line.png"
+        if os.path.exists(imgpath):
+            image = Image.open(imgpath)
+            st.image(image, output_format="png", use_column_width="auto")
+        if selection == "GREETING":
+            generate_logo(logo_blocks, "")
+        elif selection == "ABOUT":
+            generate_logo(logo_blocks, "04_about/")
+        elif selection == "PROFILE":
+            generate_logo(logo_blocks, "03_profile/")
+        elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
+            generate_logo(logo_blocks, "02_radio/")
+        elif selection == "わんこ旅🐶🐾":
+            generate_logo(logo_blocks, "06_rikako/")
+        elif selection == "二人と同響の年表":
+            generate_logo(logo_blocks, "")
+        elif selection == "同響グリーのオールナイトニッポン0🔞":
+            generate_logo(logo_blocks, "05_radio_glee/")
+
+        page = PAGES_DEBUG[selection]
+        page.main()
 
     ## Footer ##
     st.write("Copyright © 2021 EN-Jakee Association. All Rights Reserved.")
+
 
 if __name__ == "__main__":
     main()
