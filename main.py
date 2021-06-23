@@ -38,7 +38,7 @@ def initialization():
         "PROFILE": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         #"同響グリーのオールナイトニッポン0🔞": radio_glee,
-        #"わんこ旅🐶🐾": rikako
+        "わんこ旅🐶🐾": rikako
         #"二人と同響の年表": timeline
     }
 

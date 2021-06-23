@@ -13,7 +13,7 @@ def show_image(imgpath, type):
         image = Image.open(imgpath)
         st.image(image, output_format=type, use_column_width="auto")
 
-def write_text(text, fontsize=14, align="left"):
+def write_text(text, fontsize=18, align="left"):
     new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
@@ -88,7 +88,6 @@ def main():
             elif n == 17:
                 write_text("続きましては再び奈良へ。")
 
-
             elif n == 18:
                 write_text("ここ最近見つけた新たな紫陽花スポット。")
                 write_text("奈良の「矢田寺」。")
@@ -118,6 +117,7 @@ def main():
                 write_text("是非梅雨の花に目を向けてみてはいかがでしょうか。")
                 write_text("")
                 write_text("次回コラムもお楽しみに！")
+                write_text("理香子", align="right")
 
 if __name__ == "__main__":
     main()
