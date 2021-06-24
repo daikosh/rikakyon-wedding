@@ -192,8 +192,11 @@ def main():
     elif is_authenticated(username, password) == 2: # デバッグモード時
         clear_blocks(blocks)
         login_expander.success("Debug Mode / デバッグモード！！！")
+        st.write(RELEASE_TIME)
+        st.write(NOW_TIME)
         if RELEASE_TIME < NOW_TIME:
             st.write("公開！！！！！！")
+
         else:
             st.write("公開前")
 
