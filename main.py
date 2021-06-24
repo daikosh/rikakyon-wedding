@@ -2,6 +2,8 @@ import streamlit as st
 import importlib
 import os
 from PIL import Image
+from datetime import datetime
+
 homepage = importlib.import_module("01_homepage.main")
 radio = importlib.import_module("02_radio.main")
 profile = importlib.import_module("03_profile.main")
@@ -13,6 +15,8 @@ timeline = importlib.import_module("07_timeline.main")
 ## Parameters ##
 USERNAME = "rikakyon"
 PASSWORD = "0326"
+NOW_TIME = datetime.now()
+RELEASE_TIME = datetime(2021, 6, 26, 19, 00)
 
 ## Page Config ##
 st.set_page_config(
@@ -72,15 +76,27 @@ st.markdown(set_width_style, unsafe_allow_html=True)
 
 def initialization():
     global PAGES, PAGES_DEBUG
-    PAGES = {
-        "GREETING": homepage,
-        "ABOUT": party,
-        "PROFILE": profile,
-        "マツイキョースケのオールナイトニッポン🍆📻": radio,
-        #"同響グリーのオールナイトニッポン0🔞": radio_glee,
-        #"わんこ旅🐶📷": rikako
-        #"二人と同響の年表": timeline
-    }
+    if RELEASE_TIME < NOW_TIME: # リリース時間になったとき
+        PAGES = {
+            "GREETING": homepage,
+            "ABOUT": party,
+            "PROFILE": profile,
+            "マツイキョースケのオールナイトニッポン🍆📻": radio,
+            #"同響グリーのオールナイトニッポン0🔞": radio_glee,
+            "わんこ旅🐶📷": rikako
+            #"二人と同響の年表": timeline
+        }
+    else:
+        PAGES = {
+            "GREETING": homepage,
+            "ABOUT": party,
+            "PROFILE": profile,
+            "マツイキョースケのオールナイトニッポン🍆📻": radio
+            #"同響グリーのオールナイトニッポン0🔞": radio_glee,
+            #"わんこ旅🐶📷": rikako
+            #"二人と同響の年表": timeline
+        }
+
     PAGES_DEBUG = {
         "GREETING": homepage,
         "ABOUT": party,
@@ -90,7 +106,6 @@ def initialization():
         "わんこ旅🐶📷": rikako
         #"二人と同響の年表": timeline
     }
-
 
 def is_authenticated(username, password):
     if username == USERNAME and password == PASSWORD:
@@ -145,7 +160,7 @@ def main():
     password = login_expander.text_input("パスワード / Password", value="", type="password")
     login_expander.subheader("こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。")
 
-    if is_authenticated(username, password) == 1:
+    if is_authenticated(username, password) == 1: # メイン
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
 
@@ -174,9 +189,13 @@ def main():
 
         page = PAGES[selection]
         page.main()
-    elif is_authenticated(username, password) == 2:
+    elif is_authenticated(username, password) == 2: # デバッグモード時
         clear_blocks(blocks)
         login_expander.success("Debug Mode / デバッグモード！！！")
+        if RELEASE_TIME < NOW_TIME:
+            st.write("公開！！！！！！")
+        else:
+            st.write("公開前")
 
         ## Body ##
         write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
@@ -194,7 +213,7 @@ def main():
             generate_logo(logo_blocks, "03_profile/")
         elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
             generate_logo(logo_blocks, "02_radio/")
-        elif selection == "わんこ旅🐶🐾":
+        elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
         elif selection == "二人と同響の年表":
             generate_logo(logo_blocks, "")
