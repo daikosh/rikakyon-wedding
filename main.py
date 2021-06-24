@@ -16,7 +16,7 @@ timeline = importlib.import_module("07_timeline.main")
 USERNAME = "rikakyon"
 PASSWORD = "0326"
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 6, 24, 20, 38)
+RELEASE_TIME = datetime.datetime(2021, 6, 26, 19, 00)
 
 ## Page Config ##
 st.set_page_config(
