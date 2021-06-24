@@ -78,7 +78,7 @@ def initialization():
         "PROFILE": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         #"同響グリーのオールナイトニッポン0🔞": radio_glee,
-        #"わんこ旅🐶🐾": rikako
+        #"わんこ旅🐶📷": rikako
         #"二人と同響の年表": timeline
     }
     PAGES_DEBUG = {
@@ -87,7 +87,7 @@ def initialization():
         "PROFILE": profile,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         #"同響グリーのオールナイトニッポン0🔞": radio_glee,
-        "わんこ旅🐶🐾": rikako
+        "わんこ旅🐶📷": rikako
         #"二人と同響の年表": timeline
     }
 
@@ -165,7 +165,7 @@ def main():
             generate_logo(logo_blocks, "03_profile/")
         elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
             generate_logo(logo_blocks, "02_radio/")
-        elif selection == "わんこ旅🐶🐾":
+        elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
         elif selection == "二人と同響の年表":
             generate_logo(logo_blocks, "")
