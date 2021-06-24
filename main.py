@@ -3,7 +3,6 @@ import importlib
 import os
 from PIL import Image
 from datetime import datetime
-import datetime
 
 homepage = importlib.import_module("01_homepage.main")
 radio = importlib.import_module("02_radio.main")
@@ -16,7 +15,7 @@ timeline = importlib.import_module("07_timeline.main")
 ## Parameters ##
 USERNAME = "rikakyon"
 PASSWORD = "0326"
-NOW_TIME = datetime.now() + datetime.timedelta(hours=9)
+NOW_TIME = datetime.now() #+ datetime.timedelta(hours=9)
 RELEASE_TIME = datetime(2021, 6, 24, 20, 34)
 
 ## Page Config ##
