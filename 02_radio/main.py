@@ -28,12 +28,18 @@ def main():
     initialization()
 
     ## Body ##
-    open_radio_expander("#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)", '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3', False)
 
     NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
     RELEASE_TIME = datetime.datetime(2021, 7, 4, 19, 00)
     if RELEASE_TIME < NOW_TIME: # リリース時間になったとき
-        open_radio_expander("#2 「珍苗字東京大決戦〜城之内死す〜」 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)", '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3', True)
+        open_radio_expander("#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)",\
+                            '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3', False)
+        open_radio_expander("#2 「珍苗字東京大決戦〜城之内死す〜」 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)",\
+                            '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3', True)
+    else:
+        open_radio_expander("#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)",\
+                                '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3', True)
+
 
     write_text("To be continued ...", 20, "black", "left")
     #open_radio_expander("#3 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/03_radio_no3.jpg', '02_radio/03_radio_no3.mp3', True)
