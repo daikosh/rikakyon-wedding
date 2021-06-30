@@ -16,7 +16,7 @@ timeline = importlib.import_module("07_timeline.main")
 USERNAME = "rikakyon"
 PASSWORD = "0326"
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 6, 26, 19, 00)
+RELEASE_TIME = datetime.datetime(2021, 7, 3, 19, 00)
 
 ## Page Config ##
 st.set_page_config(
@@ -37,20 +37,6 @@ hide_streamlit_style = """
 <style>
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    .reportview-container .main .block-container{{
-        max-width: {max_width}px;
-        padding-top: {padding_top}rem;
-        padding-right: {padding_right}rem;
-        padding-left: {padding_left}rem;
-        padding-bottom: {padding_bottom}rem;
-    }}
-    .reportview-container .main {{
-        color: {COLOR};
-        background-color: {BACKGROUND_COLOR};
-    }}
-
-
-</style>
 """
 
 set_width_style =f"""
@@ -91,9 +77,9 @@ def initialization():
             "GREETING": homepage,
             "ABOUT": party,
             "PROFILE": profile,
-            "マツイキョースケのオールナイトニッポン🍆📻": radio
+            "マツイキョースケのオールナイトニッポン🍆📻": radio,
             #"同響グリーのオールナイトニッポン0🔞": radio_glee,
-            #"わんこ旅🐶📷": rikako
+            "わんこ旅🐶📷": rikako
             #"二人と同響の年表": timeline
         }
 
@@ -189,6 +175,7 @@ def main():
 
         page = PAGES[selection]
         page.main()
+
     elif is_authenticated(username, password) == 2: # デバッグモード時
         clear_blocks(blocks)
         login_expander.success("Debug Mode / デバッグモード！！！")
@@ -196,7 +183,6 @@ def main():
         st.write(NOW_TIME)
         if RELEASE_TIME < NOW_TIME:
             st.write("公開！！！！！！")
-
         else:
             st.write("公開前")
 
