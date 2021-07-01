@@ -8,12 +8,21 @@ import os
 def initialization():
     pass
 
+def show_image(imgpath, type):
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format=type, use_column_width="auto")
+
+def write_text(text, fontsize=18, align="left"):
+    new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
+    st.markdown(new_text, unsafe_allow_html=True)
+
 def main():
     initialization()
 
     ## Body ##
-    options = ["1回生", "2回生", "3回生", "4回生"]
-    st.select_slider("", options)
+    imgpath = "07_timeline/timeline.png"
+    show_image(imgpath, "png")
 
 if __name__ == "__main__":
     main()
