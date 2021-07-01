@@ -22,7 +22,7 @@ def main(debug):
     initialization()
 
 ## Vol.1 ##
-    with st.beta_expander("Vol.1 梅雨を楽しむ紫陽花", expanded=False):
+    with st.beta_expander("Vol.1 梅雨を楽しむ紫陽花", expanded=True):
         dir_path = "06_rikako/vol.1/"
         for n in range(1, 28):
             show_image(dir_path + str(n).zfill(2) + ".jpg", "jpg")
