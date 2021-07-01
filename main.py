@@ -169,7 +169,7 @@ def main():
         elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
         elif selection == "二人と同響の年表":
-            generate_logo(logo_blocks, "")
+            generate_logo(logo_blocks, "07_timeline/")
         elif selection == "同響グリーのオールナイトニッポン0🔞":
             generate_logo(logo_blocks, "05_radio_glee/")
 
@@ -205,7 +205,7 @@ def main():
         elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
         elif selection == "二人と同響の年表":
-            generate_logo(logo_blocks, "")
+            generate_logo(logo_blocks, "07_timeline/")
         elif selection == "同響グリーのオールナイトニッポン0🔞":
             generate_logo(logo_blocks, "05_radio_glee/")
 
