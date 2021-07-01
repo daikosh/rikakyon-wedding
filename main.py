@@ -133,7 +133,7 @@ def generate_logo(blocks, page):
         image = Image.open(imgpath)
         blocks[0].image(image, output_format="png", use_column_width="auto")
 
-def main():
+def main(debug):
     initialization()
 
     # Logo #
@@ -175,7 +175,7 @@ def main():
             generate_logo(logo_blocks, "05_radio_glee/")
 
         page = PAGES[selection]
-        page.main()
+        page.main(debug)
 
     elif is_authenticated(username, password) == 2: # デバッグモード時
         clear_blocks(blocks)
@@ -220,4 +220,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(debug)
