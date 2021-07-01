@@ -80,7 +80,7 @@ def initialization():
             "マツイキョースケのオールナイトニッポン🍆📻": radio,
             #"同響グリーのオールナイトニッポン0🔞": radio_glee,
             "わんこ旅🐶📷": rikako
-            #"二人と同響の年表": timeline
+            #"二人の軌跡": timeline
         }
 
     PAGES_DEBUG = {
@@ -90,7 +90,7 @@ def initialization():
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         #"同響グリーのオールナイトニッポン0🔞": radio_glee,
         "わんこ旅🐶📷": rikako,
-        "二人と同響の年表": timeline
+        "二人の軌跡": timeline
     }
 
 def is_authenticated(username, password):
@@ -168,7 +168,7 @@ def main():
             generate_logo(logo_blocks, "02_radio/")
         elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
-        elif selection == "二人と同響の年表":
+        elif selection == "二人の軌跡":
             generate_logo(logo_blocks, "07_timeline/")
         elif selection == "同響グリーのオールナイトニッポン0🔞":
             generate_logo(logo_blocks, "05_radio_glee/")
@@ -204,8 +204,8 @@ def main():
             generate_logo(logo_blocks, "02_radio/")
         elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
-        elif selection == "二人と同響の年表":
-            generate_logo(logo_blocks, "07_timeline/")
+        elif selection == "二人の軌跡":
+            generate_logo(logo_blocks, "02_radio/")
         elif selection == "同響グリーのオールナイトニッポン0🔞":
             generate_logo(logo_blocks, "05_radio_glee/")
 
