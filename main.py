@@ -175,7 +175,7 @@ def main():
             generate_logo(logo_blocks, "05_radio_glee/")
 
         page = PAGES[selection]
-        page.main(debug)
+        page.main()
 
     elif is_authenticated(username, password) == 2: # デバッグモード時
         clear_blocks(blocks)
