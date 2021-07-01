@@ -133,7 +133,7 @@ def generate_logo(blocks, page):
         image = Image.open(imgpath)
         blocks[0].image(image, output_format="png", use_column_width="auto")
 
-def main(debug):
+def main():
     initialization()
 
     # Logo #
@@ -220,4 +220,4 @@ def main(debug):
 
 
 if __name__ == "__main__":
-    main(debug)
+    main()
