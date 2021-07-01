@@ -13,7 +13,7 @@ def write_text(text, fontsize, color, align):
     new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
-def main():
+def main(debug):
     initialization()
 
     ## Body ##
@@ -22,4 +22,4 @@ def main():
     write_text("要望、リクエスト等があれば是非LINEへメッセージを送ってください。<br><br>", 20, "black", "left")
     write_text("運営メンバー　一同", 20, "black", "right")
 if __name__ == "__main__":
-    main()
+    main(debug)

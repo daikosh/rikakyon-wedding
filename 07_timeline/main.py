@@ -17,7 +17,7 @@ def write_text(text, fontsize=18, align="left"):
     new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
-def main():
+def main(debug):
     initialization()
 
     ## Body ##
@@ -25,4 +25,4 @@ def main():
     show_image(imgpath, "png")
 
 if __name__ == "__main__":
-    main()
+    main(debug)

@@ -149,6 +149,7 @@ def main():
     if is_authenticated(username, password) == 1: # メイン
         clear_blocks(blocks)
         login_expander.success("Logged / ログインに成功しました。")
+        debug = False
 
         ## Body ##
         write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
@@ -174,11 +175,13 @@ def main():
             generate_logo(logo_blocks, "05_radio_glee/")
 
         page = PAGES[selection]
-        page.main()
+        page.main(debug)
 
     elif is_authenticated(username, password) == 2: # デバッグモード時
         clear_blocks(blocks)
         login_expander.success("Debug Mode / デバッグモード！！！")
+        debug = True
+
         st.write(RELEASE_TIME)
         st.write(NOW_TIME)
         if RELEASE_TIME < NOW_TIME:
@@ -210,7 +213,7 @@ def main():
             generate_logo(logo_blocks, "05_radio_glee/")
 
         page = PAGES_DEBUG[selection]
-        page.main()
+        page.main(debug)
 
     ## Footer ##
     st.write("Copyright © 2021 EN-Jakee Association. All Rights Reserved.")

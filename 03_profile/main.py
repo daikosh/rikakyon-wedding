@@ -17,7 +17,7 @@ def write_text(text, fontsize, color, align):
     new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
-def main():
+def main(debug):
     initialization()
 
     ## Body ##
@@ -43,4 +43,4 @@ def main():
             write_text("Nobuaki Yoshitane", "24", "Black", "center")
 
 if __name__ == "__main__":
-    main()
+    main(debug)

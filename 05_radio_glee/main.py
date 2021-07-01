@@ -18,7 +18,7 @@ def open_radio_expander(title, imgpath, mp3path):
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/mp3')
 
-def main():
+def main(debug):
     initialization()
     ## Body ##
 
@@ -38,4 +38,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(debug)
