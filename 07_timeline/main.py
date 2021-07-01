@@ -21,7 +21,7 @@ def main():
     initialization()
 
     ## Body ##
-    imgpath = "07_timeline/timeline.png"
+    imgpath = "07_timeline/Timeline.png"
     show_image(imgpath, "png")
 
 if __name__ == "__main__":
