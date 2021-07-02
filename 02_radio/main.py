@@ -31,6 +31,10 @@ def main(debug):
     マツイキョースケのオールナイトニッポンは2022年3月26日の結婚式（二次会）へ向けてなんやかんややっていく番組です。
     毎回ステキなゲストとともにお送りしています！
     """)
+    imgpath = "line.png"
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format="png", use_column_width="auto")
 
     ## Body ##
     NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)

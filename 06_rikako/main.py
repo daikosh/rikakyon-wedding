@@ -26,6 +26,11 @@ def main(debug):
     st.markdown("""
     不定期で理香子のコラムをお届け。ファインダー越しの理香子の世界をお楽しみください🐶
     """)
+    
+    imgpath = "line.png"
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format="png", use_column_width="auto")
 
 ## Vol.1 ##
     with st.beta_expander("Vol.1 梅雨を楽しむ紫陽花", expanded=True):
