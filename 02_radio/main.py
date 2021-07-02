@@ -28,9 +28,13 @@ def main(debug):
     initialization()
 
     st.markdown("""
-    マツイキョースケのオールナイトニッポンは2022年3月26日の結婚式（二次会）へ向けてなんやかんややっていく番組です。
+    マツイキョースケのオールナイトニッポンは結婚式二次会へ向けてなんやかんややっていく番組です。
+
     毎回ステキなゲストとともにお送りしています！
     """)
+
+    st.write("おたよりは[こちら](https://forms.gle/2HiMwgmzzhrxTJ5BA)で募集しています！")
+
     imgpath = "line.png"
     if os.path.exists(imgpath):
         image = Image.open(imgpath)
