@@ -23,6 +23,10 @@ def main(debug):
     NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
     RELEASE_TIME = datetime.datetime(2022, 7, 4, 19, 00)
 
+    st.markdown("""
+    不定期で理香子のコラムをお届け。ファインダー越しの理香子の世界をお楽しみください🐶
+    """)
+
 ## Vol.1 ##
     with st.beta_expander("Vol.1 梅雨を楽しむ紫陽花", expanded=True):
         dir_path = "06_rikako/vol.1/"

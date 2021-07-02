@@ -27,6 +27,11 @@ def write_text(text, fontsize, color, align):
 def main(debug):
     initialization()
 
+    st.markdown("""
+    マツイキョースケのオールナイトニッポンは2022年3月26日の結婚式（二次会）へ向けてなんやかんややっていく番組です。
+    毎回ステキなゲストとともにお送りしています！
+    """)
+
     ## Body ##
     NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
     RELEASE_TIME = datetime.datetime(2021, 7, 4, 19, 00)
