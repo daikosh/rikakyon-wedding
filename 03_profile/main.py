@@ -36,11 +36,6 @@ def main(debug):
     show_image("03_profile/07_rikako.png", "png")
     write_text("Rikako Inukai", "24", "Black", "center")
 
-    imgpath = "line.png"
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        st.image(image, output_format="png", use_column_width="auto")
-
     st.title("PROJECT MEMBER")
     show_image("03_profile/05_akuzawa.png", "png")
     write_text("Takuya Akuzawa", "24", "Black", "center")
