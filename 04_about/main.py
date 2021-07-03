@@ -24,9 +24,9 @@ def main(debug):
     st.markdown("""
         結婚式二次会情報
 
-        日時: 2022年3月26日 (土)', unsafe_allow_html=True)
+        日時: 2022年3月26日 (土)
 
-        会場: 未定 </p>', unsafe_allow_html=True)
+        会場: 未定
     """)
 
 if __name__ == "__main__":
