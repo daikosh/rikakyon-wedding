@@ -21,9 +21,13 @@ def main(debug):
     initialization()
 
     ## Body ##
-    st.markdown('<p style="font-size: 16px">日時: 2022年3月26日 (土)', unsafe_allow_html=True)
-    st.markdown('<p style="font-size: 16px">会場: 未定 </p>', unsafe_allow_html=True)
+    st.markdown("""
+        結婚式二次会情報
 
+        日時: 2022年3月26日 (土)', unsafe_allow_html=True)
+
+        会場: 未定 </p>', unsafe_allow_html=True)
+    """)
 
 if __name__ == "__main__":
     main(debug)
