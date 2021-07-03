@@ -21,7 +21,7 @@ def main(debug):
     initialization()
 
     st.markdown("""
-        二人の軌跡をみなさんで見ていきませんか？
+        二人の軌跡をみなさんで見ていきましょう。
     """)
 
     imgpath = "line.png"
