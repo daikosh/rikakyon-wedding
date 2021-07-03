@@ -24,6 +24,10 @@ def main(debug):
     st.markdown('<p style="font-size: 16px">日時: 2022年3月26日 (土)', unsafe_allow_html=True)
     st.markdown('<p style="font-size: 16px">会場: 未定 </p>', unsafe_allow_html=True)
 
+    imgpath = "line.png"
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format="png", use_column_width="auto")
 
 if __name__ == "__main__":
     main(debug)

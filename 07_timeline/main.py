@@ -20,6 +20,15 @@ def write_text(text, fontsize=18, align="left"):
 def main(debug):
     initialization()
 
+    st.markdown("""
+        二人の軌跡をみなさんで見ていきませんか？
+    """)
+
+    imgpath = "line.png"
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format="png", use_column_width="auto")
+
     ## Body ##
     imgpath = "07_timeline/Timeline.png"
     show_image(imgpath, "png")

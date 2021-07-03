@@ -25,5 +25,11 @@ def main(debug):
     要望、リクエスト等があれば是非LINEへメッセージを送ってください。
     """)
     write_text("運営メンバー　一同", 16, "black", "right")
+    
+    imgpath = "line.png"
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format="png", use_column_width="auto")
+
 if __name__ == "__main__":
     main(debug)
