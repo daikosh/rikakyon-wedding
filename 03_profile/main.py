@@ -43,7 +43,7 @@ def main(debug):
                 show_image("03_profile/06_nobuaki.png", "png")
                 write_text("Nobuaki Yoshitane", "24", "Black", "center")
     else:
-        st.header("MAIN CAST")
+        st.title("MAIN CAST")
         imgpath = "line.png"
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
@@ -57,7 +57,7 @@ def main(debug):
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
             st.image(image, output_format="png", use_column_width="auto")
-        st.header("PROJECT MEMBER")
+        st.title("PROJECT MEMBER")
 
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
