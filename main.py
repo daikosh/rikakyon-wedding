@@ -216,6 +216,10 @@ def main():
         page.main(debug)
 
     ## Footer ##
+    imgpath = "line.png"
+    if os.path.exists(imgpath):
+        image = Image.open(imgpath)
+        st.image(image, output_format="png", use_column_width="auto")
     st.write("Copyright © 2021 EN-Jakee Association. All Rights Reserved.")
 
 
