@@ -366,6 +366,6 @@ def main(debug):
                         次回コラムもお楽しみに！
                     """)
             write_text("理香子", align="right")
-    write_text("To be continued ...", 16, "black", "left")
+    st.markdown("To be continued ...")
 if __name__ == "__main__":
     main(debug)
