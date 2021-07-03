@@ -49,7 +49,7 @@ def main(debug):
         show_image("03_profile/07_rikako.png", "png")
         write_text("Rikako Inukai", "24", "Black", "center")
 
-        st.header("PROJECT MEMBER"):
+        st.header("PROJECT MEMBER")
         show_image("03_profile/05_akuzawa.png", "png")
         write_text("Takuya Akuzawa", "24", "Black", "center")
         show_image("03_profile/02_daikosh2.png", "png")
