@@ -46,7 +46,7 @@ def main(debug):
     if RELEASE_TIME < NOW_TIME or debug is True: # リリース時間になったとき
         open_radio_expander("#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)",\
                             '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3', False)
-        open_radio_expander("#2 「珍苗字東京大決戦〜城之内死す〜」 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)",\
+        open_radio_expander("#2 「珍名字東京大決戦〜城之内死す〜」 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)",\
                             '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3', True)
     else:
         open_radio_expander("#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)",\
