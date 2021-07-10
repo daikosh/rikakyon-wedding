@@ -9,8 +9,8 @@ from PIL import Image
 def initialization():
     pass
 
-def write_text(text, fontsize, color, align):
-    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
+def write_text(text, fontsize, align):
+    new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
 def main(debug):
@@ -24,8 +24,8 @@ def main(debug):
 
     要望、リクエスト等があれば是非LINEへメッセージを送ってください。
     """)
-    write_text("運営メンバー　一同", 16, "black", "right")
-    
+    write_text("運営メンバー　一同", 16, "right")
+
 
 if __name__ == "__main__":
     main(debug)

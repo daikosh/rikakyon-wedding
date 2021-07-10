@@ -13,9 +13,6 @@ def show_image(imgpath, type):
         image = Image.open(imgpath)
         st.image(image, output_format=type, use_column_width="auto")
 
-def write_text(text, fontsize, color, align):
-    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
-    st.markdown(new_text, unsafe_allow_html=True)
 
 def main(debug):
     initialization()

@@ -20,8 +20,8 @@ def open_radio_expander(title, imgpath, mp3path, expanded):
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/mp3')
 
-def write_text(text, fontsize, color, align):
-    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
+def write_text(text, fontsize, align):
+    new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
 def main(debug):
@@ -54,7 +54,7 @@ def main(debug):
                                 '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3', True)
 
 
-    write_text("To be continued ...", 16, "black", "left")
+    write_text("To be continued ...", 16, "left")
     #open_radio_expander("#3 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/03_radio_no3.jpg', '02_radio/03_radio_no3.mp3', True)
     #open_radio_expander("#4 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/04_radio_no4.jpg', '02_radio/04_radio_no4.mp3', True)
     #open_radio_expander("#5 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/05_radio_no5.jpg', '02_radio/05_radio_no5.mp3', True)
