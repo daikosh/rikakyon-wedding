@@ -30,8 +30,9 @@ def main(debug):
         st.image(image, output_format="png", use_column_width="auto")
 
     ## Body ##
-    imgpath = "07_timeline/Timeline.png"
-    show_image(imgpath, "png")
+    with st.beta_expander("誕生〜小学生", expanded=True):
+        imgpath = "07_timeline/Timeline.png"
+        show_image(imgpath, "png")
 
 if __name__ == "__main__":
     main(debug)
