@@ -49,11 +49,15 @@ set_width_style =f"""
         padding-left: {padding_left}rem;
         padding-bottom: {padding_bottom}rem;
     }}
+    .reportview-container .main {{
+        color: {COLOR};
+        background-color: {BACKGROUND_COLOR};
+    }}
 </style>
 """
 
 
-#st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown(set_width_style, unsafe_allow_html=True)
 
 
@@ -100,7 +104,7 @@ def is_authenticated(username, password):
         return 0
 
 def write_text(text, fontsize, color, align):
-    new_text = '<p style="font-family:sans-serif; text-align: {}; color:{}; font-size: {}px;">{}</p>'.format(align, color, fontsize, text)
+    new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
 def generate_blocks():
@@ -150,7 +154,7 @@ def main():
         debug = False
 
         ## Body ##
-        write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
+        write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
         logo_blocks = generate_logo_blocks()
         selection = st.radio("", list(PAGES.keys()))
         imgpath = "line.png"
@@ -190,7 +194,7 @@ def main():
             st.write("公開前")
 
         ## Body ##
-        write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "black", "center")
+        write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
         logo_blocks = generate_logo_blocks()
         selection = st.radio("", list(PAGES_DEBUG.keys()))
         imgpath = "line.png"
