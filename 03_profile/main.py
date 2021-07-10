@@ -40,7 +40,7 @@ def main(debug):
     show_image("03_profile/05_akuzawa.png", "png")
     write_text("Takuya Akuzawa", "24", "center")
     show_image("03_profile/02_daikosh2.png", "png")
-    write_text("daikosh", "24", center")
+    write_text("daikosh", "24", "center")
     show_image("03_profile/04_rinrin.png", "png")
     write_text("Hiroto Hayashi", "24", "center")
     show_image("03_profile/06_nobuaki.png", "png")
