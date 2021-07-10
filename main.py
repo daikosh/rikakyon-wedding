@@ -103,7 +103,7 @@ def is_authenticated(username, password):
     else:
         return 0
 
-def write_text(text, fontsize, color, align):
+def write_text(text, fontsize, align):
     new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
     st.markdown(new_text, unsafe_allow_html=True)
 
