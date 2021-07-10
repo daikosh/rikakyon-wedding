@@ -11,6 +11,7 @@ party = importlib.import_module("04_about.main")
 radio_glee = importlib.import_module("05_radio_glee.main")
 rikako = importlib.import_module("06_rikako.main")
 timeline = importlib.import_module("07_timeline.main")
+cat = importlib.import_module("08_cat.main")
 
 ## Parameters ##
 USERNAME = "rikakyon"
@@ -47,10 +48,6 @@ set_width_style =f"""
         padding-right: {padding_right}rem;
         padding-left: {padding_left}rem;
         padding-bottom: {padding_bottom}rem;
-    }}
-    .reportview-container .main {{
-        color: {COLOR};
-        background-color: {BACKGROUND_COLOR};
     }}
 </style>
 """
@@ -90,7 +87,8 @@ def initialization():
         "TIMELINE": timeline,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         #"同響グリーのオールナイトニッポン0🔞": radio_glee,
-        "わんこ旅🐶📷": rikako
+        "わんこ旅🐶📷": rikako,
+        "みんなのにゃんこ🐱": cat
     }
 
 def is_authenticated(username, password):
@@ -169,6 +167,8 @@ def main():
             generate_logo(logo_blocks, "02_radio/")
         elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
+        elif selection == "みんなのにゃんこ🐱":
+            generate_logo(logo_blocks, "08_cat/")
         elif selection == "TIMELINE":
             generate_logo(logo_blocks, "07_timeline/")
         elif selection == "同響グリーのオールナイトニッポン0🔞":
@@ -209,6 +209,8 @@ def main():
             generate_logo(logo_blocks, "06_rikako/")
         elif selection == "TIMELINE":
             generate_logo(logo_blocks, "07_timeline/")
+        elif selection == "みんなのにゃんこ🐱":
+            generate_logo(logo_blocks, "08_cat/")
         elif selection == "同響グリーのオールナイトニッポン0🔞":
             generate_logo(logo_blocks, "05_radio_glee/")
 
