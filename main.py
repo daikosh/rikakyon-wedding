@@ -87,10 +87,10 @@ def initialization():
         "GREETING": homepage,
         "ABOUT": party,
         "PROFILE": profile,
+        "TIMELINE": timeline,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
         #"同響グリーのオールナイトニッポン0🔞": radio_glee,
-        "わんこ旅🐶📷": rikako,
-        "二人の軌跡": timeline
+        "わんこ旅🐶📷": rikako
     }
 
 def is_authenticated(username, password):
@@ -169,7 +169,7 @@ def main():
             generate_logo(logo_blocks, "02_radio/")
         elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
-        elif selection == "二人の軌跡":
+        elif selection == "TIMELINE":
             generate_logo(logo_blocks, "07_timeline/")
         elif selection == "同響グリーのオールナイトニッポン0🔞":
             generate_logo(logo_blocks, "05_radio_glee/")
@@ -207,7 +207,7 @@ def main():
             generate_logo(logo_blocks, "02_radio/")
         elif selection == "わんこ旅🐶📷":
             generate_logo(logo_blocks, "06_rikako/")
-        elif selection == "二人の軌跡":
+        elif selection == "TIMELINE":
             generate_logo(logo_blocks, "07_timeline/")
         elif selection == "同響グリーのオールナイトニッポン0🔞":
             generate_logo(logo_blocks, "05_radio_glee/")
