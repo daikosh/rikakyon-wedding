@@ -30,9 +30,38 @@ def main(debug):
         st.image(image, output_format="png", use_column_width="auto")
 
     ## Body ##
-    with st.beta_expander("誕生〜小学生", expanded=True):
+    with st.beta_expander("第1章 幼少期", expanded=True):
         imgpath = "07_timeline/Timeline.png"
         show_image(imgpath, "png")
+    with st.beta_expander("第2章 中高校生", expanded=True):
+        imgpath = "07_timeline/Timeline.png"
+        show_image(imgpath, "png")
+    with st.beta_expander("第3章 大学1回生", expanded=True):
+        imgpath = "07_timeline/Timeline.png"
+        show_image(imgpath, "png")
+    with st.beta_expander("第4章 大学2回生", expanded=True):
+        imgpath = "07_timeline/Timeline.png"
+        show_image(imgpath, "png")
+    with st.beta_expander("第5章 大学3回生", expanded=True):
+        imgpath = "07_timeline/Timeline.png"
+        show_image(imgpath, "png")
+    with st.beta_expander("第6章 大学4回生", expanded=True):
+        imgpath = "07_timeline/Timeline.png"
+        show_image(imgpath, "png")
+    with st.beta_expander("第7章 社会人", expanded=True):
+        imgpath = "07_timeline/Timeline.png"
+        show_image(imgpath, "png")
+    with st.beta_expander("番外 プロポーズ", expanded=True):
+        imgpath = "07_timeline/Timeline.png"
+        show_image(imgpath, "png")
+    # with st.beta_expander("第8章 新婚生活", expanded=True):
+    #     imgpath = "07_timeline/Timeline.png"
+    #     show_image(imgpath, "png")
+    # with st.beta_expander("第9章 老後", expanded=True):
+    #     imgpath = "07_timeline/Timeline.png"
+    #     show_image(imgpath, "png")
+
+
 
 if __name__ == "__main__":
     main(debug)
