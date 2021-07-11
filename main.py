@@ -49,16 +49,12 @@ set_width_style =f"""
         padding-left: {padding_left}rem;
         padding-bottom: {padding_bottom}rem;
     }}
-    .reportview-container .main {{
-        color: {COLOR};
-        background-color: {BACKGROUND_COLOR};
-    }}
 </style>
 """
 
 
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-#st.markdown(set_width_style, unsafe_allow_html=True)
+st.markdown(set_width_style, unsafe_allow_html=True)
 
 
 def initialization():
