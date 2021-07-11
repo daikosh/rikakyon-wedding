@@ -40,7 +40,7 @@ def main(debug):
         st.image("08_cat/img/01_cat.jpeg", caption="王者の風格")
 
         st.write("投稿者: べ")
-        st.image("08_cat/img/02_cat.jpeg", output_format="jpeg", caption="だるまにされた猫です")
+        st.image("08_cat/img/02_cat.png", caption="だるまにされた猫です")
 
 
     else: # リリース前
