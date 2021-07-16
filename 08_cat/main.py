@@ -42,7 +42,10 @@ def main(debug):
         st.write("投稿者: べ")
         st.image("08_cat/img/02_cat.png", caption="だるまにされた猫です")
 
-
+        st.write("投稿者: ごっちん")
+        st.write("猫のねころがりシリーズです。")
+        st.image("08_cat/img/03_cat.jpeg", caption="しずく")
+        st.image("08_cat/img/04_cat.jpeg", caption="そら")
     else: # リリース前
         st.markdown("""
             Coming soon...
