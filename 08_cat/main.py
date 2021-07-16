@@ -22,7 +22,7 @@ def main(debug):
     initialization()
 
     st.markdown("""
-        みなさんに投稿していただいたご自宅のにゃんこ、道端で見かけたにゃんこ、フリー素材のにゃんこなど、癒やされるにゃんこたちを公開予定です。
+        みなさんに投稿していただいたご自宅のにゃんこ、道端で見かけたにゃんこ、フリー素材のにゃんこなど、癒やされるにゃんこたちを公開中です。
     """)
 
     st.write("にゃんこたちの写真は[こちらのフォーム](https://forms.gle/rPJk87YdzdhvVTxr6)で募集しています！")
@@ -34,7 +34,7 @@ def main(debug):
 
     ## Body ##
     NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-    RELEASE_TIME = datetime.datetime(2022, 7, 10, 19, 00)
+    RELEASE_TIME = datetime.datetime(2021, 7, 17, 19, 00)
     if RELEASE_TIME < NOW_TIME or debug is True: # リリース時間になったとき
         st.write("投稿者: おみそ")
         st.image("08_cat/img/01_cat.jpeg", caption="王者の風格")
@@ -48,7 +48,7 @@ def main(debug):
         st.write("猫のねころがりシリーズです。")
         st.image("08_cat/img/03_cat.jpeg", caption="しずく")
         st.image("08_cat/img/04_cat.jpeg", caption="そら")
-        
+
     else: # リリース前
         st.markdown("""
             Coming soon...
