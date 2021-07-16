@@ -38,14 +38,17 @@ def main(debug):
     if RELEASE_TIME < NOW_TIME or debug is True: # リリース時間になったとき
         st.write("投稿者: おみそ")
         st.image("08_cat/img/01_cat.jpeg", caption="王者の風格")
+        st.image("line.png", use_column_width="auto")
 
         st.write("投稿者: べ")
         st.image("08_cat/img/02_cat.png", caption="だるまにされた猫です")
+        st.image("line.png", use_column_width="auto")
 
         st.write("投稿者: ごっちん")
         st.write("猫のねころがりシリーズです。")
         st.image("08_cat/img/03_cat.jpeg", caption="しずく")
         st.image("08_cat/img/04_cat.jpeg", caption="そら")
+        
     else: # リリース前
         st.markdown("""
             Coming soon...
