@@ -28,11 +28,11 @@ def main(debug):
 
         We've learned the oneness of our Earth;
 
-        (我らは地球の一体性を学んだ。)
+        (地球の一体性を我らは学んだ。)
 
         Still higher than self-love we find
 
-        (我らが見つけた自己愛よりもさらに高いところにあるのは)
+        (我らが見つけた自己愛よりも高みにあるのは)
 
         The love and service of mankind.
 
@@ -40,7 +40,7 @@ def main(debug):
 
         Dear Alma Mater, sons of thine
 
-        (親愛なるアルマ・マーター、汝の息子)
+        (親愛なる母校、貴方の息子)
 
         Would strive to live the life divine;
 
