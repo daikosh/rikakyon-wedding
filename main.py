@@ -17,7 +17,7 @@ cat = importlib.import_module("08_cat.main")
 USERNAME = "rikakyon"
 PASSWORD = "0326"
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 7, 24, 13, 00)
+RELEASE_TIME = datetime.datetime(2021, 7, 24, 19, 00)
 
 ## Page Config ##
 st.set_page_config(
