@@ -36,21 +36,6 @@ def main(debug):
     NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
     RELEASE_TIME = datetime.datetime(2021, 7, 24, 19, 00)
 
-    st.write("投稿者: おみそ")
-    st.image("08_cat/img/01_cat.jpeg", caption="王者の風格")
-    st.image("line.png", use_column_width="auto")
-
-    st.write("投稿者: べ")
-    st.image("08_cat/img/02_cat.png", caption="だるまにされた猫です")
-    st.image("line.png", use_column_width="auto")
-
-    st.write("投稿者: ごっちん")
-    st.write("猫のねころがりシリーズです。")
-    st.image("08_cat/img/03_cat.jpeg", caption="しずく")
-    st.image("08_cat/img/04_cat.jpeg", caption="そら")
-    st.image("line.png", use_column_width="auto")
-
-
     if RELEASE_TIME < NOW_TIME or debug is True: # リリース時間になったとき
         st.write("投稿者: 🐱")
         st.write("よそ様の猫トップ5")
@@ -72,15 +57,20 @@ def main(debug):
         st.write("何撮ってんだよ？のガン飛ばしシリーズです。")
         st.image("08_cat/img/13.jpeg", caption="しずく")
         st.image("08_cat/img/14.jpeg", caption="そら")
-        #st.image("line.png", use_column_width="auto")
 
+    st.write("投稿者: おみそ")
+    st.image("08_cat/img/01_cat.jpeg", caption="王者の風格")
+    st.image("line.png", use_column_width="auto")
 
+    st.write("投稿者: べ")
+    st.image("08_cat/img/02_cat.png", caption="だるまにされた猫です")
+    st.image("line.png", use_column_width="auto")
 
-    else: # リリース前
-        st.markdown("""
-            Coming soon...
-        """)
-
+    st.write("投稿者: ごっちん")
+    st.write("猫のねころがりシリーズです。")
+    st.image("08_cat/img/03_cat.jpeg", caption="しずく")
+    st.image("08_cat/img/04_cat.jpeg", caption="そら")
+    st.image("line.png", use_column_width="auto")
 
 
 if __name__ == "__main__":
