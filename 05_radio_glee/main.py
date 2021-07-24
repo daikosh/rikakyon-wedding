@@ -22,7 +22,7 @@ def main(debug):
     initialization()
     ## Body ##
 
-    open_radio_expander("#1 ", '05_radio_glee/01_radio_no1.jpg', '05_radio_glee/radio_1.m4a')
+    open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」 【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a')
     st.write("To be continued ...")
     #open_radio_expander("#2 「珍苗字東京大決戦〜城之内死す〜」 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)", '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3')
     #open_radio_expander("#3 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/03_radio_no3.jpg', '02_radio/03_radio_no3.mp3')

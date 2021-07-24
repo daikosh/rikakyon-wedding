@@ -66,7 +66,7 @@ def initialization():
             "PROFILE": profile,
             #"TIMELINE": timeline,
             "マツイキョースケのオールナイトニッポン🍆📻": radio,
-            "同響グリーのオールナイトニッポン0": radio_glee,
+            "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
             "わんこ旅🐶📷": rikako,
             "みんなのにゃんこ🐱": cat
             #"二人と同響の年表": timeline
@@ -78,7 +78,7 @@ def initialization():
             "PROFILE": profile,
             #"TIMELINE": timeline,
             "マツイキョースケのオールナイトニッポン🍆📻": radio,
-            #"同響グリーのオールナイトニッポン0": radio_glee,
+            #"同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
             "わんこ旅🐶📷": rikako,
             "みんなのにゃんこ🐱": cat
             #"二人の軌跡": timeline
@@ -90,7 +90,7 @@ def initialization():
         "PROFILE": profile,
         "TIMELINE": timeline,
         "マツイキョースケのオールナイトニッポン🍆📻": radio,
-        "同響グリーのオールナイトニッポン0": radio_glee,
+        "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
         "わんこ旅🐶📷": rikako,
         "みんなのにゃんこ🐱": cat
     }
@@ -175,7 +175,7 @@ def main():
             generate_logo(logo_blocks, "08_cat/")
         elif selection == "TIMELINE":
             generate_logo(logo_blocks, "07_timeline/")
-        elif selection == "同響グリーのオールナイトニッポン0":
+        elif selection == "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺":
             generate_logo(logo_blocks, "05_radio_glee/")
 
         page = PAGES[selection]
@@ -215,7 +215,7 @@ def main():
             generate_logo(logo_blocks, "07_timeline/")
         elif selection == "みんなのにゃんこ🐱":
             generate_logo(logo_blocks, "08_cat/")
-        elif selection == "同響グリーのオールナイトニッポン0":
+        elif selection == "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺":
             generate_logo(logo_blocks, "05_radio_glee/")
 
         page = PAGES_DEBUG[selection]
