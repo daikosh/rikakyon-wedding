@@ -23,37 +23,21 @@ def main(debug):
 
     st.markdown("""
         Still broader than our land of birth,
-
-        (我らの生まれた国よりもまだ広い、)
-
         We've learned the oneness of our Earth;
-
-        (地球の一体性を我らは学んだ。)
-
         Still higher than self-love we find
-
-        (我らが見つけた自己愛よりも高みにあるのは)
-
         The love and service of mankind.
-
-        (人類の愛と奉仕である。)
-
         Dear Alma Mater, sons of thine
-
-        (親愛なる母校、貴方の息子)
-
         Would strive to live the life divine;
-
-        (神聖な人生を送るために努力しよう。)
-
         That we may with increasing years have stood
-
-        (年を重ねるごとに、我らは立ち上がるのだ。)
-
         For Kyosuke, for Rikako, and Brotherhood!
 
-        (響介、理香子、そし我ら兄弟たちのために！)
+        我らの生まれた国よりもまだ広い、地球の一体性を我らは学んだ。
+        我らが見つけた自己愛よりも高みにあるのは人類の愛と奉仕だ。
+        親愛なる母校、貴方の息子。神聖な人生を送るために努力しよう。
+        年を重ねるごとに、我らは立ち上がるのだ。
+        響介、理香子、そして我ら兄弟たちのために！
     """)
+    
     st.write("おたよりは[こちらのフォーム](https://forms.gle/eNde9TRwbGpRWnu49)で募集しています！")
 
     imgpath = "line.png"
