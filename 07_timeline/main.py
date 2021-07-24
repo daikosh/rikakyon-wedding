@@ -37,7 +37,7 @@ def main(debug):
 
     ## Body ##
     with st.beta_expander("第1章 幼少期", expanded=True):
-        imgpath = "07_timeline/Timeline.png"
+        imgpath = "07_timeline/01.png"
         show_image(imgpath, "png")
     with st.beta_expander("第2章 中高校生", expanded=False):
         imgpath = "07_timeline/Timeline.png"
