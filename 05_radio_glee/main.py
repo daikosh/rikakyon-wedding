@@ -24,15 +24,15 @@ def main(debug):
     st.markdown("""
         Still broader than our land of birth,
 
-        (我々の生まれた国よりもまだ広い、)
+        (我らの生まれた国よりもまだ広い、)
 
         We've learned the oneness of our Earth;
 
-        (私たちは地球の一体性を学んだ。)
+        (我らは地球の一体性を学んだ。)
 
         Still higher than self-love we find
 
-        (私たちが見つけた自己愛よりもさらに高いところにあるのは)
+        (我らが見つけた自己愛よりもさらに高いところにあるのは)
 
         The love and service of mankind.
 
@@ -48,10 +48,10 @@ def main(debug):
 
         That we may with increasing years have stood
 
-        (年を重ねるごとに、我々は立ち上がるのだ。)
+        (年を重ねるごとに、我らは立ち上がるのだ。)
 
         For Kyosuke, for Rikako, and Brotherhood!
-        
+
         (響介、理香子、そし我ら兄弟たちのために！)
     """)
     st.write("おたよりは[こちらのフォーム](https://forms.gle/eNde9TRwbGpRWnu49)で募集しています！")
