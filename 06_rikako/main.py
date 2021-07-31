@@ -21,7 +21,7 @@ def write_text(text, fontsize=16, align="left"):
 def main(debug):
     initialization()
     NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-    RELEASE_TIME = datetime.datetime(2022, 7, 4, 19, 00)
+    RELEASE_TIME = datetime.datetime(2021, 7, 31, 13, 00)
 
     st.markdown("""
     不定期で理香子のコラムをお届け。
@@ -35,7 +35,7 @@ def main(debug):
         st.image(image, output_format="png", use_column_width="auto")
 
 ## Vol.1 ##
-    with st.beta_expander("Vol.1 梅雨を楽しむ紫陽花", expanded=True):
+    with st.beta_expander("Vol.1 梅雨を楽しむ紫陽花", expanded=False):
         dir_path = "06_rikako/vol.1/"
         for n in range(1, 28):
             show_image(dir_path + str(n).zfill(2) + ".jpg", "jpg")
@@ -245,7 +245,9 @@ def main(debug):
                         次回コラムもお楽しみに！
                     """)
                     write_text("理香子", align="right")
+
 ## Vol.3 ##
+    if debug is True:
         with st.beta_expander("Vol.3 住むように過ごす 京都STAY 2", expanded=True):
             dir_path = "06_rikako/vol.3/"
             for n in range(1, 25):
@@ -366,6 +368,8 @@ def main(debug):
                         次回コラムもお楽しみに！
                     """)
             write_text("理香子", align="right")
+
+
     st.markdown("To be continued ...")
 if __name__ == "__main__":
     main(debug)
