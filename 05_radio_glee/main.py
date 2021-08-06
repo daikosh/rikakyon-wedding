@@ -11,7 +11,7 @@ RELEASE_TIME = datetime.datetime(2021, 8, 7, 13, 00)
 def initialization():
     pass
 
-def open_radio_expander(title, imgpath, mp3path):
+def open_radio_expander(title, imgpath, mp3path, format):
     with st.beta_expander(title, expanded=True):
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
@@ -19,7 +19,7 @@ def open_radio_expander(title, imgpath, mp3path):
         if os.path.exists(mp3path):
             audio_file = open(mp3path, 'rb')
             audio_bytes = audio_file.read()
-            st.audio(audio_bytes)
+            st.audio(audio_bytes, format='audio/{}'.format(format))
 
 def main(debug):
     initialization()
@@ -50,8 +50,8 @@ def main(debug):
 
     ## Body ##
     if RELEASE_TIME < NOW_TIME or debug is True: # リリース時間になったとき
-        open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a')
-        open_radio_expander("#2 「理香子は天才少女だった！？」〈TIMELINEの連携型コンテンツ 幼少期編〉【出演: 犬飼、松井、松岡、阿久沢】", '05_radio_glee/radio_2.png', '05_radio_glee/radio_2.mp3')
+        open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a', 'm4a')
+        open_radio_expander("#2 「理香子は天才少女だった！？」〈TIMELINEの連携型コンテンツ 幼少期編〉【出演: 犬飼、松井、松岡、阿久沢】", '05_radio_glee/radio_2.png', '05_radio_glee/radio_2.mp3', 'mp3')
         st.write("To be continued ...")
     else:
         open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a')
