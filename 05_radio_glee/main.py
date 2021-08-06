@@ -19,7 +19,7 @@ def open_radio_expander(title, imgpath, mp3path):
         if os.path.exists(mp3path):
             audio_file = open(mp3path, 'rb')
             audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/m4a')
+            st.audio(audio_bytes)
 
 def main(debug):
     initialization()
