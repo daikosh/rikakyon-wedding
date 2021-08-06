@@ -51,7 +51,7 @@ def main(debug):
     ## Body ##
     if RELEASE_TIME < NOW_TIME or debug is True: # リリース時間になったとき
         open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a', 'm4a')
-        open_radio_expander("#2 「理香子は天才少女だった！？」〈TIMELINE連携型コンテンツ 幼少期編〉【出演: 犬飼、松井、松岡、阿久沢】", '05_radio_glee/radio_2.png', '05_radio_glee/radio_2.mp3', 'mp3')
+        open_radio_expander("#2 「〈TL第1章〉楽器を始めてなかった頃。」【出演: 犬飼、松井、松岡、阿久澤】", '05_radio_glee/radio_2.png', '05_radio_glee/radio_2.mp3', 'mp3')
         st.write("To be continued ...")
     else:
         open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a')
