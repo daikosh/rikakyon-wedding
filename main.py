@@ -17,7 +17,7 @@ cat = importlib.import_module("08_cat.main")
 USERNAME = "rikakyon"
 PASSWORD = "0326"
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 7, 24, 19, 00)
+RELEASE_TIME = datetime.datetime(2021, 8, 7, 13, 00)
 
 ## Page Config ##
 st.set_page_config(
@@ -64,12 +64,11 @@ def initialization():
             "GREETING": homepage,
             "ABOUT": party,
             "PROFILE": profile,
-            #"TIMELINE": timeline,
+            "TIMELINE": timeline,
             "マツイキョースケのオールナイトニッポン🍆📻": radio,
             "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
             "わんこ旅🐶📷": rikako,
             "みんなのにゃんこ🐱": cat
-            #"二人と同響の年表": timeline
         }
     else: # リリース前
         PAGES = {
@@ -78,10 +77,9 @@ def initialization():
             "PROFILE": profile,
             #"TIMELINE": timeline,
             "マツイキョースケのオールナイトニッポン🍆📻": radio,
-            #"同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
+            "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
             "わんこ旅🐶📷": rikako,
             "みんなのにゃんこ🐱": cat
-            #"二人の軌跡": timeline
         }
 
     PAGES_DEBUG = {

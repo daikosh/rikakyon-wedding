@@ -1,8 +1,11 @@
 import streamlit as st
 from PIL import Image, ImageOps
 import os
-## Parameters ##
+import datetime
 
+## Parameters ##
+NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
+RELEASE_TIME = datetime.datetime(2021, 8, 7, 13, 00)
 
 ## functions ##
 def initialization():
@@ -12,7 +15,7 @@ def open_radio_expander(title, imgpath, mp3path):
     with st.beta_expander(title, expanded=True):
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
-            st.image(image, output_format="jpeg", use_column_width="auto")
+            st.image(image, use_column_width="auto")
         if os.path.exists(mp3path):
             audio_file = open(mp3path, 'rb')
             audio_bytes = audio_file.read()
@@ -37,7 +40,7 @@ def main(debug):
         年を重ねるごとに、我らは立ち上がるのだ。
         響介、理香子、そして我ら兄弟たちのために！
     """)
-    
+
     st.write("おたよりは[こちらのフォーム](https://forms.gle/eNde9TRwbGpRWnu49)で募集しています！")
 
     imgpath = "line.png"
@@ -46,9 +49,15 @@ def main(debug):
         st.image(image, output_format="png", use_column_width="auto")
 
     ## Body ##
-    open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」 【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a')
-    st.write("To be continued ...")
-    #open_radio_expander("#2 「珍苗字東京大決戦〜城之内死す〜」 【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)", '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3')
+    if RELEASE_TIME < NOW_TIME or debug is True: # リリース時間になったとき
+        open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a')
+        open_radio_expander("#2 「理香子は天才少女だった！？」〈TIMELINEの連携型コンテンツ 幼少期編〉【出演: 犬飼、松井、松岡、阿久沢】", '05_radio_glee/radio_2.png', '05_radio_glee/radio_2.mp3')
+        st.write("To be continued ...")
+    else:
+        open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a')
+        st.write("To be continued ...")
+
+
     #open_radio_expander("#3 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/03_radio_no3.jpg', '02_radio/03_radio_no3.mp3')
     #open_radio_expander("#4 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/04_radio_no4.jpg', '02_radio/04_radio_no4.mp3')
     #open_radio_expander("#5 「」 【ゲスト: ？？？】 (2021.?.? 収録)", '02_radio/05_radio_no5.jpg', '02_radio/05_radio_no5.mp3')
