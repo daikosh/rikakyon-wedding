@@ -54,7 +54,7 @@ def main(debug):
         open_radio_expander("#2 「〈TL第1章〉楽器を始めてなかった頃。」【出演: 犬飼、松井、松岡、阿久澤】", '05_radio_glee/radio_2.png', '05_radio_glee/radio_2.mp3', 'mp3')
         st.write("To be continued ...")
     else:
-        open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a')
+        open_radio_expander("#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】", '05_radio_glee/radio_1.jpg', '05_radio_glee/radio_1.m4a', 'm4a')
         st.write("To be continued ...")
 
 
