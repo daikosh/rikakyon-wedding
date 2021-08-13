@@ -48,21 +48,21 @@ def main(debug):
                             '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3', False)
         open_radio_expander("#2 「珍名字東京大決戦〜城之内死す〜」【ゲスト: 阿久澤拓也、吉種伸彰】 (2021.6.12 収録)",\
                             '02_radio/02_radio_no2.jpg', '02_radio/02_radio_no2.mp3', False)
-        with st.beta_expander("#3「あさぎもーりって今なにしてるん？」【ゲスト: 和久あさぎ、毛利真夕】 (2021.7.22 収録)", expanded=True):
+        with st.beta_expander("#3 「聴取率を爆上げしたいので、弦のカリスマをゲストに呼びました。」【ゲスト: 和久あさぎ、毛利真夕】 (2021.7.22 収録)", expanded=True):
             image = Image.open('02_radio/03_radio_no3.jpg')
             st.image(image, output_format="jpeg", use_column_width="auto")
-            st.write("Part 1/3 「あさぎもーりの今」 ")
+            st.write("Part 1/3 「今野さん、毛利さん、お久しぶりです。」 ")
             audio_file = open('02_radio/03_radio_no3.mp3', 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/mp3')
-            st.write("Part 2/3 「あさぎもーりの今」 ")
-            audio_file = open('02_radio/03_radio_no3.mp3', 'rb')
-            audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/mp3')
-            st.write("Part 3/3 「あさぎもーりの今」 ")
-            audio_file = open('02_radio/03_radio_no3.mp3', 'rb')
-            audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/mp3')
+            # st.write("Part 2/3 「あさぎもーりの今」 ")
+            # audio_file = open('02_radio/03_radio_no3.mp3', 'rb')
+            # audio_bytes = audio_file.read()
+            # st.audio(audio_bytes, format='audio/mp3')
+            # st.write("Part 3/3 「あさぎもーりの今」 ")
+            # audio_file = open('02_radio/03_radio_no3.mp3', 'rb')
+            # audio_bytes = audio_file.read()
+            # st.audio(audio_bytes, format='audio/mp3')
     else:
         open_radio_expander("#1 「人材紹介業Feeとりがち〜そうだ、顎削ろう〜」 【ゲスト: 林寛人、松岡大起】 (2021.5.29 収録)",\
                                 '02_radio/01_radio_no1.jpg', '02_radio/01_radio_no1.mp3', False)
