@@ -51,7 +51,7 @@ def main(debug):
         with st.beta_expander("#3 「聴取率を爆上げしたいので、弦のカリスマをゲストに呼びました。」【ゲスト: 和久あさぎ、毛利真夕】 (2021.7.22 収録)", expanded=True):
             image = Image.open('02_radio/03_radio_no3.jpg')
             st.image(image, output_format="jpeg", use_column_width="auto")
-            st.write("Part 1/3 「今野さん、毛利さん、お久しぶりです。」 ")
+            st.write("◯Part 1/3 「今野さん、毛利さん、お久しぶりです。」 ")
             audio_file = open('02_radio/03_radio_no3.mp3', 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/mp3')
