@@ -17,7 +17,7 @@ cat = importlib.import_module("08_cat.main")
 USERNAME = "rikakyon"
 PASSWORD = "0326"
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 8, 7, 13, 00)
+RELEASE_TIME = datetime.datetime(2021, 8, 21, 13, 00)
 
 ## Page Config ##
 st.set_page_config(
@@ -75,7 +75,7 @@ def initialization():
             "GREETING": homepage,
             "ABOUT": party,
             "PROFILE": profile,
-            #"TIMELINE": timeline,
+            "TIMELINE": timeline,
             "マツイキョースケのオールナイトニッポン🍆📻": radio,
             "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
             "わんこ旅🐶📷": rikako,
