@@ -55,7 +55,7 @@ def main(debug):
             audio_file = open('02_radio/03_radio_no3.mp3', 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/mp3')
-            st.write("◯Part 2/3 「バレンティン」 ")
+            st.write("◯Part 2/3 「君はバレンティンを憶えているか？」 ")
             audio_file = open('02_radio/04_radio_3-2.mp3', 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/mp3')
