@@ -52,26 +52,12 @@ set_width_style =f"""
 </style>
 """
 
-
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown(set_width_style, unsafe_allow_html=True)
 
-
-def initialization():
-    global PAGES, PAGES_DEBUG
-    if RELEASE_TIME < NOW_TIME: # リリース時間になったとき
-        PAGES = {
-            "GREETING": homepage,
-            "ABOUT": party,
-            "PROFILE": profile,
-            "TIMELINE": timeline,
-            "マツイキョースケのオールナイトニッポン🍆📻": radio,
-            "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
-            "わんこ旅🐶📷": rikako,
-            "みんなのにゃんこ🐱": cat
-        }
-    else: # リリース前
-        PAGES = {
+class Mainpage(object):
+    def __init__(self):
+        self.pages = {
             "GREETING": homepage,
             "ABOUT": party,
             "PROFILE": profile,
@@ -82,150 +68,131 @@ def initialization():
             "みんなのにゃんこ🐱": cat
         }
 
-    PAGES_DEBUG = {
-        "GREETING": homepage,
-        "ABOUT": party,
-        "PROFILE": profile,
-        "TIMELINE": timeline,
-        "マツイキョースケのオールナイトニッポン🍆📻": radio,
-        "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺": radio_glee,
-        "わんこ旅🐶📷": rikako,
-        "みんなのにゃんこ🐱": cat
-    }
-
-def is_authenticated(username, password):
-    if username == USERNAME and password == PASSWORD:
-        return 1
-    elif username == USERNAME and password == "0622":
-        return 2
-    else:
-        return 0
-
-def write_text(text, fontsize, align):
-    new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
-    st.markdown(new_text, unsafe_allow_html=True)
-
-def generate_blocks():
-    main_title = st.empty()
-    main_description = st.empty()
-    main_description_eng = st.empty()
-    return main_title, main_description, main_description_eng
-
-def generate_text(blocks):
-    imgpath = "logo.png"
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        blocks[0].image(image, output_format="png", use_column_width="auto")
-
-def clear_blocks(blocks):
-    for block in blocks:
-        block.empty()
-
-def generate_logo_blocks():
-    main_title = st.empty()
-    main_description = st.empty()
-    main_description_eng = st.empty()
-    return main_title, main_description, main_description_eng
-
-def generate_logo(blocks, page):
-    imgpath = "{}logo.png".format(page)
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        blocks[0].image(image, output_format="png", use_column_width="auto")
-
-def main():
-    initialization()
-
-    # Logo #
-    blocks = generate_blocks()
-    generate_text(blocks)
-
-    ## Login Section ##
-    login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
-    username = login_expander.text_input("ユーザ名 / Username")
-    password = login_expander.text_input("パスワード / Password", value="", type="password")
-    login_expander.markdown("""こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。""")
-
-    if is_authenticated(username, password) == 1: # メイン
-        clear_blocks(blocks)
-        login_expander.success("Logged / ログインに成功しました。")
-        debug = False
-
-        ## Body ##
-        write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
-        logo_blocks = generate_logo_blocks()
-        selection = st.radio("", list(PAGES.keys()))
-        imgpath = "line.png"
-        if os.path.exists(imgpath):
-            image = Image.open(imgpath)
-            st.image(image, output_format="png", use_column_width="auto")
-        if selection == "GREETING":
-            generate_logo(logo_blocks, "")
-        elif selection == "ABOUT":
-            generate_logo(logo_blocks, "04_about/")
-        elif selection == "PROFILE":
-            generate_logo(logo_blocks, "03_profile/")
-        elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
-            generate_logo(logo_blocks, "02_radio/")
-        elif selection == "わんこ旅🐶📷":
-            generate_logo(logo_blocks, "06_rikako/")
-        elif selection == "みんなのにゃんこ🐱":
-            generate_logo(logo_blocks, "08_cat/")
-        elif selection == "TIMELINE":
-            generate_logo(logo_blocks, "07_timeline/")
-        elif selection == "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺":
-            generate_logo(logo_blocks, "05_radio_glee/")
-
-        page = PAGES[selection]
-        page.main(debug)
-
-    elif is_authenticated(username, password) == 2: # デバッグモード時
-        clear_blocks(blocks)
-        login_expander.success("Debug Mode / デバッグモード！！！")
-        debug = True
-
-        st.write(RELEASE_TIME)
-        st.write(NOW_TIME)
-        if RELEASE_TIME < NOW_TIME:
-            st.write("公開！！！！！！")
+    def is_authenticated(self, username, password):
+        if username == USERNAME and password == PASSWORD:
+            return 1
+        elif username == USERNAME and password == "0622":
+            return 2
         else:
-            st.write("公開前")
+            return 0
 
-        ## Body ##
-        write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
-        logo_blocks = generate_logo_blocks()
-        selection = st.radio("", list(PAGES_DEBUG.keys()))
+    def write_text(self, text, fontsize, align):
+        new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
+        st.markdown(new_text, unsafe_allow_html=True)
+
+    def generate_blocks(self):
+        main_title = st.empty()
+        main_description = st.empty()
+        main_description_eng = st.empty()
+        return main_title, main_description, main_description_eng
+
+    def generate_text(self, blocks):
+        imgpath = "logo.png"
+        if os.path.exists(imgpath):
+            image = Image.open(imgpath)
+            blocks[0].image(image, output_format="png", use_column_width="auto")
+
+    def clear_blocks(self, blocks):
+        for block in blocks:
+            block.empty()
+
+    def generate_logo_blocks(self):
+        main_title = st.empty()
+        main_description = st.empty()
+        main_description_eng = st.empty()
+        return main_title, main_description, main_description_eng
+
+    def generate_logo(self, blocks, page):
+        imgpath = "{}logo.png".format(page)
+        if os.path.exists(imgpath):
+            image = Image.open(imgpath)
+            blocks[0].image(image, output_format="png", use_column_width="auto")
+
+    def open(self):
+        # Logo #
+        blocks = self.generate_blocks()
+        self.generate_text(blocks)
+
+        ## Login Section ##
+        login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
+        username = login_expander.text_input("ユーザ名 / Username")
+        password = login_expander.text_input("パスワード / Password", value="", type="password")
+        login_expander.markdown("""こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。""")
+
+        if self.is_authenticated(username, password) == 1: # メイン
+            self.clear_blocks(blocks)
+            login_expander.success("Logged / ログインに成功しました。")
+            self.debug = False
+
+            ## Body ##
+            self.write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
+            logo_blocks = self.generate_logo_blocks()
+            selection = st.radio("", list(self.pages.keys()))
+            imgpath = "line.png"
+            if os.path.exists(imgpath):
+                image = Image.open(imgpath)
+                st.image(image, output_format="png", use_column_width="auto")
+            if selection == "GREETING":
+                self.generate_logo(logo_blocks, "")
+            elif selection == "ABOUT":
+                self.generate_logo(logo_blocks, "04_about/")
+            elif selection == "PROFILE":
+                self.generate_logo(logo_blocks, "03_profile/")
+            elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
+                self.generate_logo(logo_blocks, "02_radio/")
+            elif selection == "わんこ旅🐶📷":
+                self.generate_logo(logo_blocks, "06_rikako/")
+            elif selection == "みんなのにゃんこ🐱":
+                self.generate_logo(logo_blocks, "08_cat/")
+            elif selection == "TIMELINE":
+                self.generate_logo(logo_blocks, "07_timeline/")
+            elif selection == "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺":
+                self.generate_logo(logo_blocks, "05_radio_glee/")
+
+            page = self.pages[selection]
+            page.main(self.debug)
+
+        elif self.is_authenticated(username, password) == 2: # デバッグモード時
+            self.clear_blocks(blocks)
+            login_expander.success("Debug Mode / デバッグモード！！！")
+            self.debug = True
+
+            ## Body ##
+            self.write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
+            logo_blocks = self.generate_logo_blocks()
+            selection = st.radio("", list(self.pages.keys()))
+            imgpath = "line.png"
+            if os.path.exists(imgpath):
+                image = Image.open(imgpath)
+                st.image(image, output_format="png", use_column_width="auto")
+            if selection == "GREETING":
+                self.generate_logo(logo_blocks, "")
+            elif selection == "ABOUT":
+                self.generate_logo(logo_blocks, "04_about/")
+            elif selection == "PROFILE":
+                self.generate_logo(logo_blocks, "03_profile/")
+            elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
+                self.generate_logo(logo_blocks, "02_radio/")
+            elif selection == "わんこ旅🐶📷":
+                self.generate_logo(logo_blocks, "06_rikako/")
+            elif selection == "TIMELINE":
+                self.generate_logo(logo_blocks, "07_timeline/")
+            elif selection == "みんなのにゃんこ🐱":
+                self.generate_logo(logo_blocks, "08_cat/")
+            elif selection == "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺":
+                self.generate_logo(logo_blocks, "05_radio_glee/")
+
+            page = self.pages[selection]
+            page.main(self.debug)
+
+        ## Footer ##
         imgpath = "line.png"
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
             st.image(image, output_format="png", use_column_width="auto")
-        if selection == "GREETING":
-            generate_logo(logo_blocks, "")
-        elif selection == "ABOUT":
-            generate_logo(logo_blocks, "04_about/")
-        elif selection == "PROFILE":
-            generate_logo(logo_blocks, "03_profile/")
-        elif selection == "マツイキョースケのオールナイトニッポン🍆📻":
-            generate_logo(logo_blocks, "02_radio/")
-        elif selection == "わんこ旅🐶📷":
-            generate_logo(logo_blocks, "06_rikako/")
-        elif selection == "TIMELINE":
-            generate_logo(logo_blocks, "07_timeline/")
-        elif selection == "みんなのにゃんこ🐱":
-            generate_logo(logo_blocks, "08_cat/")
-        elif selection == "同響グリークラブのオールナイトニッポン０🕺🕺🕺🕺":
-            generate_logo(logo_blocks, "05_radio_glee/")
-
-        page = PAGES_DEBUG[selection]
-        page.main(debug)
-
-    ## Footer ##
-    imgpath = "line.png"
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        st.image(image, output_format="png", use_column_width="auto")
-    st.write("Copyright © 2021 EN-Jakee Association. All Rights Reserved.")
+        st.write("Copyright © 2021 EN-Jakee Association. All Rights Reserved.")
 
 
 if __name__ == "__main__":
-    main()
+    mainpage = Mainpage()
+    mainpage.open()

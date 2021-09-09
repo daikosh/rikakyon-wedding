@@ -5,27 +5,23 @@ import os
 
 
 ## functions ##
-def initialization():
-    pass
+class About(object):
+    def __init__(self, debug):
+        self.debug = debug
 
-def show_image(imgpath, type):
-    if os.path.exists(imgpath):
-        image = Image.open(imgpath)
-        st.image(image, output_format=type, use_column_width="auto")
+    def open(self):
+        ## Body ##
+        st.markdown("""
+            【結婚式二次会情報】
 
+            日時: 2022年3月26日 (土)
+
+            会場: 未定
+        """)
 
 def main(debug):
-    initialization()
-
-    ## Body ##
-    st.markdown("""
-        【結婚式二次会情報】
-
-
-        日時: 2022年3月26日 (土)
-
-        会場: 未定
-    """)
+    about = About(debug)
+    about.open()
 
 if __name__ == "__main__":
     main(debug)
