@@ -39,7 +39,7 @@ class Timeline(object):
 
         ## Body ##
         self.open_timeline_expander("第1章 幼少期", "07_timeline/01.png", False)
-        if RELEASE_TIME < NOW_TIME or self.debug is True:
+        if RELEASE_TIME <= NOW_TIME or self.debug is True:
             with st.beta_expander("第2章 中高生時代", expanded=True):
                 self.show_image("07_timeline/02_1.png")
                 self.show_image("07_timeline/02_2.png")

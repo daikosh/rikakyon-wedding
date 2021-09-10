@@ -5,7 +5,7 @@ import datetime
 
 ## Parameters ##
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 8, 7, 13, 00)
+RELEASE_TIME = datetime.datetime(2021, 9, 11, 13, 00)
 
 class RadioGlee(object):
     def __init__(self, debug):
@@ -58,7 +58,15 @@ class RadioGlee(object):
             '#2 「〈TL第1章〉楽器を始めてなかった頃。」【出演: 犬飼、松井、松岡、阿久澤】',
             '05_radio_glee/radio_2.png',
             '05_radio_glee/radio_2.mp3', 'mp3',
-            True)
+            False)
+        if RELEASE_TIME <= NOW_TIME or self.debug is True:
+            self.open_radio_expander(
+                '#3 「〈TL第2章〉」【出演: 犬飼、松井、林、阿久澤】',
+                '05_radio_glee/radio_3.png',
+                '05_radio_glee/radio_3.mp3', 'mp3',
+                True)
+
+
         st.write("To be continued ...")
 
 def main(debug):
