@@ -59,12 +59,12 @@ class RadioGlee(object):
             '05_radio_glee/radio_2.png',
             '05_radio_glee/radio_2.mp3', 'mp3',
             False)
-        if RELEASE_TIME <= NOW_TIME or self.debug is True:
-            self.open_radio_expander(
-                '#3 「〈TL第2章〉楽器との出会い。」【出演: 犬飼、松井、林、阿久澤】',
-                '05_radio_glee/radio_3.png',
-                '05_radio_glee/radio_3.mp3', 'mp3',
-                True)
+        #if RELEASE_TIME <= NOW_TIME or self.debug is True:
+        self.open_radio_expander(
+            '#3 「〈TL第2章〉楽器との出会い。」【出演: 犬飼、松井、林、阿久澤】',
+            '05_radio_glee/radio_3.png',
+            '05_radio_glee/radio_3.mp3', 'mp3',
+            True)
 
 
         st.write("To be continued ...")

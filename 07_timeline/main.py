@@ -39,11 +39,11 @@ class Timeline(object):
 
         ## Body ##
         self.open_timeline_expander("第1章 幼少期", "07_timeline/01.png", False)
-        if RELEASE_TIME <= NOW_TIME or self.debug is True:
-            with st.beta_expander("第2章 中高生時代", expanded=True):
-                self.show_image("07_timeline/02_1.png")
-                self.show_image("07_timeline/02_2.png")
-                self.show_image("07_timeline/02_3.png")
+        #if RELEASE_TIME <= NOW_TIME or self.debug is True:
+        with st.beta_expander("第2章 中高生時代", expanded=True):
+            self.show_image("07_timeline/02_1.png")
+            self.show_image("07_timeline/02_2.png")
+            self.show_image("07_timeline/02_3.png")
         # self.open_timeline_expander("第3章 大学1回生", "07_timeline/01.png", True)
         # self.open_timeline_expander("第4章 大学2回生", "07_timeline/01.png", True)
         # self.open_timeline_expander("第5章 大学3回生", "07_timeline/01.png", True)
