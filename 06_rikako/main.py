@@ -1,26 +1,35 @@
-import streamlit as st
-from PIL import Image, ImageOps
 import os
 import datetime
 
-## Parameters ##
+import streamlit as st
+from PIL import Image, ImageOps
+
+
+# パラメータを設定
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
 RELEASE_TIME = datetime.datetime(2021, 8, 21, 13, 00)
 
+
+# メインクラス
 class Rikako(object):
     def __init__(self, debug):
         self.debug = debug
 
     def show_image(self, imgpath, type):
+        """画像を表示"""
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
             st.image(image, output_format=type, use_column_width="auto")
 
     def write_text(self, text, fontsize=16, align="left"):
+        """テキストを表示"""
         new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
         st.markdown(new_text, unsafe_allow_html=True)
 
     def open(self):
+        """コンテンツページを表示"""
+
+        # 説明文を表示
         st.markdown("""
         不定期で理香子のコラムをお届け。
 
@@ -28,7 +37,7 @@ class Rikako(object):
         """)
         self.show_image("line.png", "png")
 
-        ## Vol.1 ##
+        # Vol.1を表示
         with st.beta_expander("Vol.1 梅雨を楽しむ紫陽花", expanded=False):
             dir_path = "06_rikako/vol.1/"
             for n in range(1, 28):
@@ -106,7 +115,7 @@ class Rikako(object):
                     self.write_text("")
                     self.write_text("次回コラムもお楽しみに！")
                     self.write_text("理香子", align="right")
-        ## Vol.2 ##
+        # Vol.2を表示
         with st.beta_expander("Vol.2 住むように過ごす 京都STAY 1", expanded=False):
             dir_path = "06_rikako/vol.2/"
             for n in range(1, 23):
@@ -237,7 +246,7 @@ class Rikako(object):
                         次回コラムもお楽しみに！
                     """)
                     self.write_text("理香子", align="right")
-        ## Vol.3 ##
+        # Vol.3を表示
         with st.beta_expander("Vol.3 住むように過ごす 京都STAY 2", expanded=True):
             dir_path = "06_rikako/vol.3/"
             for n in range(1, 25):
@@ -359,12 +368,16 @@ class Rikako(object):
                     """)
             self.write_text("理香子", align="right")
 
-        if RELEASE_TIME < NOW_TIME or self.debug is True: # リリース時間になったとき
+        # リリース時間になった場合
+        if RELEASE_TIME <= NOW_TIME or self.debug is True:
             pass
-
+        # To be continued ... を表示
         st.markdown("To be continued ...")
 
+
+# メイン関数
 def main(debug):
+    # インスタンスを生成
     rikako = Rikako(debug)
     rikako.open()
 

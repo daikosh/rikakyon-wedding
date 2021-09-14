@@ -1,34 +1,42 @@
-import streamlit as st
-from PIL import Image, ImageOps
 import os
 import datetime
 
-## Parameters ##
+import streamlit as st
+from PIL import Image, ImageOps
+
+
+# パラメータを設定
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
 RELEASE_TIME = datetime.datetime(2021, 7, 24, 19, 00)
 
-## functions ##
+
+# メインクラス
 class Cat(object):
     def __init__(self, debug):
         self.debug = debug
 
     def show_image(self, imgpath):
+        """画像を表示"""
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
             st.image(image, use_column_width="auto")
 
     def write_text(self, text, fontsize=18, align="left"):
+        """テキストを表示"""
         new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
         st.markdown(new_text, unsafe_allow_html=True)
 
     def open(self):
+        """コンテンツページを表示"""
+
+        # 説明文を表示
         st.markdown("""
             みなさんに投稿していただいたご自宅のにゃんこ、道端で見かけたにゃんこ、フリー素材のにゃんこなど、癒やされるにゃんこたちを公開中です。
         """)
         st.write("にゃんこたちの写真は[こちらのフォーム](https://forms.gle/rPJk87YdzdhvVTxr6)で募集しています！")
         self.show_image("line.png")
 
-        ## Body ##
+        # 猫画像を表示
         st.write("投稿者: 🐱")
         st.write("よそ様の猫トップ5")
         st.image("08_cat/img/05.jpeg", caption="フライング猫")
@@ -64,9 +72,13 @@ class Cat(object):
         st.image("08_cat/img/04_cat.jpeg", caption="そら")
         st.image("line.png", use_column_width="auto")
 
+
+# メイン関数
 def main(debug):
+    # インスタンスを生成
     neko = Cat(debug)
     neko.open()
+    
 
 if __name__ == "__main__":
     main(debug)

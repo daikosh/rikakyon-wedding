@@ -1,34 +1,44 @@
-import streamlit as st
-from PIL import Image, ImageOps
 import os
 import datetime
 
-## Parameters ##
+import streamlit as st
+from PIL import Image, ImageOps
+
+
+# パラメータを設定
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
 RELEASE_TIME = datetime.datetime(2021, 9, 11, 13, 00)
 
+
+# メインクラス
 class RadioGlee(object):
     def __init__(self, debug):
         self.debug = debug
 
     def show_image(self, imgpath):
+        """画像を表示"""
         if os.path.exists(imgpath):
             image = Image.open(imgpath)
             st.image(image, use_column_width="auto")
 
     def open_radio(self, mp3path, format):
+        """ラジオを表示"""
         if os.path.exists(mp3path):
             audio_file = open(mp3path, 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes, format='audio/{}'.format(format))
 
     def open_radio_expander(self, title, imgpath, mp3path, format, expanded):
+        """ラジオエクスパンダーを表示"""
         with st.beta_expander(title, expanded=expanded):
             self.show_image(imgpath)
             self.open_radio(mp3path, format)
 
 
     def open(self):
+        """コンテンツページを表示"""
+
+        # 説明文を表示
         st.markdown("""
             Still broader than our land of birth,
             We've learned the oneness of our Earth;
@@ -48,28 +58,34 @@ class RadioGlee(object):
         st.write("おたよりは[こちらのフォーム](https://forms.gle/eNde9TRwbGpRWnu49)で募集しています！")
         self.show_image("line.png")
 
-        ## Body ##
+        # 1回目ラジオを表示
         self.open_radio_expander(
             '#1 「恥ずかしながら帰ってまいりました。」【出演: 阿久澤、松岡、林、松井】',
             '05_radio_glee/radio_1.jpg',
             '05_radio_glee/radio_1.m4a', 'm4a',
             False)
+
+        # 2回目ラジオを表示
         self.open_radio_expander(
             '#2 「〈TL第1章〉楽器を始めてなかった頃。」【出演: 犬飼、松井、松岡、阿久澤】',
             '05_radio_glee/radio_2.png',
             '05_radio_glee/radio_2.mp3', 'mp3',
             False)
-        #if RELEASE_TIME <= NOW_TIME or self.debug is True:
+
+        # 3回目ラジオを表示
         self.open_radio_expander(
             '#3 「〈TL第2章〉楽器との出会い。」【出演: 犬飼、松井、林、阿久澤】',
             '05_radio_glee/radio_3.png',
             '05_radio_glee/radio_3.mp3', 'mp3',
             True)
 
-
+        # To be continued ... を表示
         st.write("To be continued ...")
 
+
+# メイン関数
 def main(debug):
+    # インスタンスを生成
     radio_glee = RadioGlee(debug)
     radio_glee.open()
 

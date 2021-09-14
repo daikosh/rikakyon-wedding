@@ -1,21 +1,23 @@
-import streamlit as st
 import os
+
+import streamlit as st
 from PIL import Image
 
-## Parameters ##
 
-
-## functions ##
+# メインクラス
 class Greeting(object):
     def __init__(self, debug):
         self.debug = debug
 
     def write_text(self, text, fontsize, align):
+        """テキストを表示"""
         new_text = '<p style="font-family:sans-serif; text-align: {}; font-size: {}px;">{}</p>'.format(align, fontsize, text)
         st.markdown(new_text, unsafe_allow_html=True)
 
     def open(self):
-        ## Body ##
+        """コンテンツを表示"""
+
+        # 挨拶を表示
         st.markdown("""
         響介&理香子 結婚式二次会特設サイトにアクセスいただきありがとうございます。
 
@@ -25,7 +27,10 @@ class Greeting(object):
         """)
         self.write_text("運営メンバー　一同", 16, "right")
 
+
+# メイン関数
 def main(debug):
+    # インスンタンスを生成
     greeting = Greeting(debug)
     greeting.open()
 
