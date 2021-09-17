@@ -7,13 +7,26 @@ from PIL import Image, ImageOps
 
 # パラメータを設定
 NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 8, 28, 13, 00)
 
 
 # メインクラス
 class Radio(object):
     def __init__(self, debug):
         self.debug = debug
+
+    def is_release(release_time):
+        """公開時刻になったとき"""
+
+        # 現在時刻
+        current_time = datetime.datetime.now() + datetime.timedelta(hours=9)
+
+        # 現在時刻がリリース時間になった場合
+        if current_time > release_time:
+            return True
+
+        # 現在時刻がリリース時間になっていない場合
+        else:
+            return False
 
     def show_image(self, imgpath):
         """画像を表示"""
@@ -65,15 +78,19 @@ class Radio(object):
             '02_radio/02_radio_no2.mp3',
             False
         )
-        # ラジオ3回めを表示
+        # ラジオ3回目を表示
         with st.beta_expander(
             "#3 「聴取率を爆上げしたいので、弦のカリスマをゲストに呼びました。」【ゲスト: 和久あさぎ、毛利真夕】 (2021.7.22 収録)",
             expanded=True):
             self.show_image("02_radio/03_radio_no3.jpg")
-            st.write("◯Part 1/3 「今野さん、毛利さん、お久しぶりです。」 ")
+            st.write("◯Part 1/3 「今野さん、毛利さん、お久しぶりです。」")
             self.open_radio('02_radio/03_radio_no3.mp3')
-            st.write("◯Part 2/3 「君はバレンティンを憶えているか？」 ")
+            st.write("◯Part 2/3 「君はバレンティンを憶えているか？」")
             self.open_radio('02_radio/04_radio_3-2.mp3')
+            if is_release(datetime.datetime(2021, 9, 17, 20, 25)):
+                st.write("◯Part 3/3 「おじさんがハマってるものは大抵たのしい。」")
+                self.open_radio('02_radio/04_radio_3-3.mp3')
+
 
         # To be continued ... を表示
         self.write_text("To be continued ...", 16, "left")
