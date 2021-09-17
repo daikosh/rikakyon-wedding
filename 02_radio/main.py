@@ -17,7 +17,7 @@ class Radio(object):
         current_time = datetime.datetime.now() + datetime.timedelta(hours=9)
 
         # 現在時刻がリリース時間になった場合
-        if current_time >= release_time:
+        if current_time >= release_time or self.debug is True:
             return True
 
         # 現在時刻がリリース時間になっていない場合
