@@ -88,11 +88,11 @@ class Radio(object):
             st.write("◯Part 1/3 「今野さん、毛利さん、お久しぶりです。」")
             self.open_radio('02_radio/03_radio_3-1.mp3')
             st.write("◯Part 2/3 「君はバレンティンを憶えているか？」")
-            self.open_radio('02_radio/04_radio_3-2.mp3')
+            self.open_radio('02_radio/03_radio_3-2.mp3')
 
             if self.is_release(datetime.datetime(2021, 9, 18, 13, 00)):
                 st.write("◯Part 3/3 「おじさんがハマってるものは大抵たのしい。」")
-                self.open_radio('02_radio/04_radio_3-3.mp3')
+                self.open_radio('02_radio/03_radio_3-3.mp3')
 
 
         # To be continued ... を表示
