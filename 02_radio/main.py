@@ -18,10 +18,12 @@ class Radio(object):
 
         # 現在時刻がリリース時間になった場合
         if current_time >= release_time:
+            st.write("True")
             return True
 
         # 現在時刻がリリース時間になっていない場合
         else:
+            st.write("False")
             return False
 
     def show_image(self, imgpath):
@@ -83,7 +85,7 @@ class Radio(object):
             self.open_radio('02_radio/03_radio_no3.mp3')
             st.write("◯Part 2/3 「君はバレンティンを憶えているか？」")
             self.open_radio('02_radio/04_radio_3-2.mp3')
-            st.write("{}".format(is_release(datetime.datetime(2021, 9, 17, 20, 25))))
+
             if is_release(datetime.datetime(2021, 9, 17, 20, 25)):
                 st.write("◯Part 3/3 「おじさんがハマってるものは大抵たのしい。」")
                 self.open_radio('02_radio/04_radio_3-3.mp3')
