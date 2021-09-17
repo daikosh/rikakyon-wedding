@@ -21,7 +21,7 @@ class Radio(object):
             return True
 
         # 現在時刻がリリース時間になっていない場合
-        else
+        else:
             return False
 
     def show_image(self, imgpath):
