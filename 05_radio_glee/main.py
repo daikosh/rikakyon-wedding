@@ -1,19 +1,28 @@
 import os
-import datetime
+import datetime as dt
 
 import streamlit as st
 from PIL import Image, ImageOps
-
-
-# パラメータを設定
-NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 9, 11, 13, 00)
 
 
 # メインクラス
 class RadioGlee(object):
     def __init__(self, debug):
         self.debug = debug
+
+    def is_released(self, release_time):
+        """公開時刻になったとき"""
+
+        # 現在時刻
+        current_time = dt.datetime.now() + dt.timedelta(hours=9)
+
+        # 現在時刻がリリース時間になった場合
+        if current_time >= release_time or self.debug is True:
+            return True
+
+        # 現在時刻がリリース時間になっていない場合
+        else:
+            return False
 
     def show_image(self, imgpath):
         """画像を表示"""
@@ -78,6 +87,9 @@ class RadioGlee(object):
             '05_radio_glee/radio_3.png',
             '05_radio_glee/radio_3.mp3', 'mp3',
             True)
+
+        if self.is_released(dt.datetime(2021, 9, 18, 13, 00)):
+            pass
 
         # To be continued ... を表示
         st.write("To be continued ...")

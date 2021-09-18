@@ -1,19 +1,28 @@
 import os
-import datetime
+import datetime as dt
 
 import streamlit as st
 from PIL import Image, ImageOps
-
-
-# パラメータを設定
-NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 7, 24, 19, 00)
 
 
 # メインクラス
 class Cat(object):
     def __init__(self, debug):
         self.debug = debug
+
+    def is_released(self, release_time):
+        """公開時刻になったとき"""
+
+        # 現在時刻
+        current_time = dt.datetime.now() + dt.timedelta(hours=9)
+
+        # 現在時刻がリリース時間になった場合
+        if current_time >= release_time or self.debug is True:
+            return True
+
+        # 現在時刻がリリース時間になっていない場合
+        else:
+            return False
 
     def show_image(self, imgpath):
         """画像を表示"""
@@ -35,6 +44,9 @@ class Cat(object):
         """)
         st.write("にゃんこたちの写真は[こちらのフォーム](https://forms.gle/rPJk87YdzdhvVTxr6)で募集しています！")
         self.show_image("line.png")
+
+        if self.is_released(dt.datetime(2021, 9, 18, 13, 00)):
+            pass
 
         # 猫画像を表示
         st.write("投稿者: 🐱")
@@ -78,7 +90,7 @@ def main(debug):
     # インスタンスを生成
     neko = Cat(debug)
     neko.open()
-    
+
 
 if __name__ == "__main__":
     main(debug)

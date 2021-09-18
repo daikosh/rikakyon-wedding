@@ -1,5 +1,5 @@
 import os
-import datetime
+import datetime as dt
 import importlib
 
 import streamlit as st
@@ -18,8 +18,6 @@ cat = importlib.import_module("08_cat.main")
 # パラメータの設定
 USERNAME = "rikakyon"
 PASSWORD = "0326"
-NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
-RELEASE_TIME = datetime.datetime(2021, 8, 21, 13, 00)
 
 
 # ページ設定
@@ -57,6 +55,7 @@ hide_streamlit_style = """
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+
 # メインクラス
 class Mainpage(object):
     def __init__(self):
@@ -70,6 +69,20 @@ class Mainpage(object):
             "わんこ旅🐶📷": rikako,
             "みんなのにゃんこ🐱": cat
         }
+
+    def is_released(self, release_time):
+        """公開時刻になったとき"""
+
+        # 現在時刻
+        current_time = dt.datetime.now() + dt.timedelta(hours=9)
+
+        # 現在時刻がリリース時間になった場合
+        if current_time >= release_time or self.debug is True:
+            return True
+
+        # 現在時刻がリリース時間になっていない場合
+        else:
+            return False
 
     def is_authenticated(self, username, password):
         """認証"""
@@ -130,15 +143,17 @@ class Mainpage(object):
             # デバッグモードオフ
             self.debug = False
 
-            # タイトルとロゴの表示
+            # タイトルの表示
             self.write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
+
+            # ロゴの表示位置を固定
             self.logo = st.empty()
 
             # コンテンツメニューの表示
             selection = st.radio("", list(self.pages.keys()))
             self.show_image('line.png')
 
-            # ロゴの表示
+            # 選択肢に応じたロゴを固定した位置に表示
             self.show_logo(selection)
 
             # コンテンツページの表示
@@ -154,15 +169,17 @@ class Mainpage(object):
             # デバッグモード音
             self.debug = True
 
-            # タイトルとロゴの表示
+            # タイトルの表示
             self.write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
+
+            # ロゴの表示位置を固定
             self.logo = st.empty()
 
             # コンテンツメニューの表示
             selection = st.radio("", list(self.pages.keys()))
             self.show_image('line.png')
 
-            # ロゴの表示
+            # 選択肢に応じたロゴを固定した位置に表示
             self.show_logo(selection)
 
             # コンテンツページの表示

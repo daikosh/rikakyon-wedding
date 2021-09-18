@@ -1,19 +1,28 @@
 import os
-import datetime
+import datetime as dt
 
 import streamlit as st
 from PIL import Image, ImageOps
-
-
-# パラメータを表示
-RELEASE_TIME = datetime.datetime(2021, 9, 11, 13, 00)
-NOW_TIME = datetime.datetime.now() + datetime.timedelta(hours=9)
 
 
 # メインクラスを表示
 class Timeline(object):
     def __init__(self, debug):
         self.debug = debug
+
+    def is_released(self, release_time):
+        """公開時刻になったとき"""
+
+        # 現在時刻
+        current_time = dt.datetime.now() + dt.timedelta(hours=9)
+
+        # 現在時刻がリリース時間になった場合
+        if current_time >= release_time or self.debug is True:
+            return True
+
+        # 現在時刻がリリース時間になっていない場合
+        else:
+            return False
 
     def show_image(self, imgpath):
         """画像を表示"""
@@ -50,17 +59,20 @@ class Timeline(object):
         self.open_timeline_expander("第1章 幼少期", "07_timeline/01.png", False)
 
         # 第2章中高生時代を表示
-        with st.beta_expander("第2章 中高生時代", expanded=True):
+        with st.beta_expander("第2章 中学・高校編", expanded=True):
             self.show_image("07_timeline/02_1.png")
             self.show_image("07_timeline/02_2.png")
             self.show_image("07_timeline/02_3.png")
 
         # 第3章大学1回生を表示
 
-        # self.open_timeline_expander("第3章 大学1回生", "07_timeline/01.png", True)
-        # self.open_timeline_expander("第4章 大学2回生", "07_timeline/01.png", True)
-        # self.open_timeline_expander("第5章 大学3回生", "07_timeline/01.png", True)
-        # self.open_timeline_expander("第6章 大学4回生", "07_timeline/01.png", True)
+        if self.is_released(dt.datetime(2021, 9, 18, 13, 00)):
+            pass
+
+        # self.open_timeline_expander("第3章 大学編 1回生", "07_timeline/01.png", True)
+        # self.open_timeline_expander("第4章 大学編 2回生", "07_timeline/01.png", True)
+        # self.open_timeline_expander("第5章 大学編 3回生", "07_timeline/01.png", True)
+        # self.open_timeline_expander("第6章 大学編 4回生", "07_timeline/01.png", True)
         # self.open_timeline_expander("第7章 社会人", "07_timeline/01.png", True)
         # self.open_timeline_expander("番外編 EVE祭", "07_timeline/01.png", True)
         # self.open_timeline_expander("番外編 プロポーズ", "07_timeline/01.png", True)

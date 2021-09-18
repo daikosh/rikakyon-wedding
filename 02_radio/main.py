@@ -1,5 +1,5 @@
 import os
-import datetime
+import datetime as dt
 
 import streamlit as st
 from PIL import Image, ImageOps
@@ -10,11 +10,11 @@ class Radio(object):
     def __init__(self, debug):
         self.debug = debug
 
-    def is_release(self, release_time):
+    def is_released(self, release_time):
         """公開時刻になったとき"""
 
         # 現在時刻
-        current_time = datetime.datetime.now() + datetime.timedelta(hours=9)
+        current_time = dt.datetime.now() + dt.timedelta(hours=9)
 
         # 現在時刻がリリース時間になった場合
         if current_time >= release_time or self.debug is True:
@@ -90,7 +90,7 @@ class Radio(object):
             st.write("◯Part 2/3 「君はバレンティンを憶えているか？」")
             self.open_radio('02_radio/03_radio_3-2.mp3')
 
-            if self.is_release(datetime.datetime(2021, 9, 18, 13, 00)):
+            if self.is_released(dt.datetime(2021, 9, 18, 13, 00)):
                 st.write("◯Part 3/3 「おじさんがハマってるものは大抵たのしい。」")
                 self.open_radio('02_radio/03_radio_3-3.mp3')
 
