@@ -56,7 +56,7 @@ class Timeline(object):
         self.show_image("line.png")
 
         # 第1章幼少期を表示
-        self.open_timeline_expander("第1章 幼少期", "07_timeline/01.png", False)
+        self.open_timeline_expander("第1章 幼少期編", "07_timeline/01.png", False)
 
         # 第2章中高生時代を表示
         with st.beta_expander("第2章 中学・高校編", expanded=True):
