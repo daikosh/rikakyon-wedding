@@ -89,10 +89,18 @@ class Radio(object):
             self.open_radio('02_radio/03_radio_3-1.mp3')
             st.write("◯Part 2/3 「君はバレンティンを憶えているか？」")
             self.open_radio('02_radio/03_radio_3-2.mp3')
+            st.write("◯Part 3/3 「おじさんがハマってるものは大抵たのしい。」")
+            self.open_radio('02_radio/03_radio_3-3.mp3')
 
-            if self.is_released(dt.datetime(2021, 9, 18, 13, 00)):
-                st.write("◯Part 3/3 「おじさんがハマってるものは大抵たのしい。」")
-                self.open_radio('02_radio/03_radio_3-3.mp3')
+        if self.is_released(dt.datetime(2021, 9, 25, 13, 00)):
+            with st.beta_expander(
+                "#4 「幹事長スペシャル」【ゲスト: 大北晃司、ジョニー】 (2021.7.31 収録)",
+                expanded=True):
+                    self.show_image("02_radio/04_radio_4.jpg")
+                    st.write("◯Part 1/3 「ビューティフル・ネーム」")
+                    self.open_radio('02_radio/04_radio_4-1.mp3')
+
+
 
 
         # To be continued ... を表示

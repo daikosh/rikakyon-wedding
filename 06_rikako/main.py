@@ -43,6 +43,7 @@ class Rikako(object):
         不定期で理香子のコラムをお届け。
 
         ファインダー越しの理香子の世界をお楽しみください🐶
+        ちなみに理香子は猫派。
         """)
         self.show_image("line.png", "png")
 
