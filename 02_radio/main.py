@@ -83,7 +83,7 @@ class Radio(object):
         # ラジオ3回目を表示
         with st.beta_expander(
             "#3 「聴取率を爆上げしたいので、弦のカリスマをゲストに呼びました。」【ゲスト: 和久あさぎ、毛利真夕】 (2021.7.22 収録)",
-            expanded=True):
+            expanded=False):
             self.show_image("02_radio/03_radio_3.jpg")
             st.write("◯Part 1/3 「今野さん、毛利さん、お久しぶりです。」")
             self.open_radio('02_radio/03_radio_3-1.mp3')
