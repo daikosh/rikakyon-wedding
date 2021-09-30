@@ -101,8 +101,6 @@ class Radio(object):
                     self.open_radio('02_radio/04_radio_4-1.mp3')
 
 
-
-
         # To be continued ... を表示
         self.write_text("To be continued ...", 16, "left")
 
