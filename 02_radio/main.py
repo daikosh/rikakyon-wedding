@@ -83,7 +83,8 @@ class Radio(object):
         # ラジオ3回目を表示
         with st.beta_expander(
             "#3 「聴取率を爆上げしたいので、弦のカリスマをゲストに呼びました。」【ゲスト: 和久あさぎ、毛利真夕】 (2021.7.22 収録)",
-            expanded=False):
+            expanded=False
+            ):
             self.show_image("02_radio/03_radio_3.jpg")
             st.write("◯Part 1/3 「今野さん、毛利さん、お久しぶりです。」")
             self.open_radio('02_radio/03_radio_3-1.mp3')
@@ -92,14 +93,19 @@ class Radio(object):
             st.write("◯Part 3/3 「おじさんがハマってるものは大抵たのしい。」")
             self.open_radio('02_radio/03_radio_3-3.mp3')
 
-        if self.is_released(dt.datetime(2021, 9, 25, 13, 00)):
-            with st.beta_expander(
-                "#4 「幹事長スペシャル」【ゲスト: 大北晃司、ジョニー】 (2021.7.31 収録)",
-                expanded=True):
-                    self.show_image("02_radio/04_radio_4.jpg")
-                    st.write("◯Part 1/3 「ビューティフル・ネーム」")
-                    self.open_radio('02_radio/04_radio_4-1.mp3')
-
+        # ラジオ4回目を表示
+        with st.beta_expander(
+            "#4 「幹事長スペシャル」【ゲスト: 大北晃司、ジョニー】 (2021.7.31 収録)",
+            expanded=True
+            ):
+                self.show_image("02_radio/04_radio_4.jpg")
+                st.write("◯Part 1/3 「ビューティフル・ネーム」")
+                self.open_radio('02_radio/04_radio_4-1.mp3')
+                if self.is_released(dt.datetime(2021, 10, 9, 13, 00)):
+                    st.write("◯Part 2/3 「ビューティフル・ロード」")
+                    self.open_radio('02_radio/04_radio_4-2.mp3')
+                    # st.write("◯Part 3/3 「ビューティフル・フード」")
+                    # self.open_radio('02_radio/04_radio_4-2.mp3')
 
         # To be continued ... を表示
         self.write_text("To be continued ...", 16, "left")
