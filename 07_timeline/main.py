@@ -59,17 +59,13 @@ class Timeline(object):
         self.open_timeline_expander("第1章 幼少期編", "07_timeline/01.png", False)
 
         # 第2章中高生時代を表示
-        with st.beta_expander("第2章 中学・高校編", expanded=True):
+        with st.beta_expander("第2章 中高生編", expanded=True):
             self.show_image("07_timeline/02_1.png")
             self.show_image("07_timeline/02_2.png")
             self.show_image("07_timeline/02_3.png")
 
         # 第3章大学1回生を表示
-
-        if self.is_released(dt.datetime(2021, 9, 18, 13, 00)):
-            pass
-
-        # self.open_timeline_expander("第3章 大学編 1回生", "07_timeline/01.png", True)
+        self.open_timeline_expander("第3章 大学1回生編", "07_timeline/03.png", True)
         # self.open_timeline_expander("第4章 大学編 2回生", "07_timeline/01.png", True)
         # self.open_timeline_expander("第5章 大学編 3回生", "07_timeline/01.png", True)
         # self.open_timeline_expander("第6章 大学編 4回生", "07_timeline/01.png", True)

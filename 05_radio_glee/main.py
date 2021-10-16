@@ -88,8 +88,11 @@ class RadioGlee(object):
             '05_radio_glee/radio_3.mp3', 'mp3',
             True)
 
-        if self.is_released(dt.datetime(2021, 9, 18, 13, 00)):
-            pass
+        self.open_radio_expander(
+            '#4 「〈TL第3章〉大事なことは二回言え」【出演: 犬飼、松井、阿久澤】',
+            '05_radio_glee/radio_4.png',
+            '05_radio_glee/radio_4.mp3', 'mp3',
+            True)
 
         # To be continued ... を表示
         st.write("To be continued ...")
