@@ -86,7 +86,7 @@ class RadioGlee(object):
             '#3 「〈TL第2章〉楽器との出会い。」【出演: 犬飼、松井、林、阿久澤】',
             '05_radio_glee/radio_3.png',
             '05_radio_glee/radio_3.mp3', 'mp3',
-            True)
+            False)
 
         self.open_radio_expander(
             '#4 「〈TL第3章〉大事なことは二回言え」【出演: 犬飼、松井、阿久澤】',
