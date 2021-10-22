@@ -98,13 +98,13 @@ class Radio(object):
             "#4 「幹事長スペシャル」【ゲスト: 大北晃司、ジョニー】 (2021.7.31 収録)",
             expanded=True
             ):
-                self.show_image("02_radio/04_radio_4.jpg")
-                st.write("◯Part 1/3 「ビューティフル・ネーム」")
-                self.open_radio('02_radio/04_radio_4-1.mp3')
-                st.write("◯Part 2/3 「ビューティフル・ロード」")
-                self.open_radio('02_radio/04_radio_4-2.mp3')
-                st.write("◯Part 3/3 「ビューティフル・フード」")
-                self.open_radio('02_radio/04_radio_4-3.mp3')
+            self.show_image("02_radio/04_radio_4.jpg")
+            st.write("◯Part 1/3 「ビューティフル・ネーム」")
+            self.open_radio('02_radio/04_radio_4-1.mp3')
+            st.write("◯Part 2/3 「ビューティフル・ロード」")
+            self.open_radio('02_radio/04_radio_4-2.mp3')
+            st.write("◯Part 3/3 「ビューティフル・フード」")
+            self.open_radio('02_radio/04_radio_4-3.mp3')
 
         # To be continued ... を表示
         self.write_text("To be continued ...", 16, "left")
