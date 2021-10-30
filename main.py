@@ -134,57 +134,61 @@ class Mainpage(object):
         password = login_expander.text_input("パスワード / Password", value="", type="password")
         login_expander.markdown("""こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。""")
 
+        st.title("このホームページは移転しました")
+        st.write("[移転先のページ](https://enjakee-pj.herokuapp.com/)")
+        
+
         # 通常ログインした場合
-        if self.is_authenticated(username, password) == 1:
-            # メインロゴ (縁) ブロックを消去
-            self.main_logo.empty()
-            # ログインに成功しましたと表示
-            login_expander.success("Logged / ログインに成功しました。")
-            # デバッグモードオフ
-            self.debug = False
+        # if self.is_authenticated(username, password) == 1:
+        #     # メインロゴ (縁) ブロックを消去
+        #     self.main_logo.empty()
+        #     # ログインに成功しましたと表示
+        #     login_expander.success("Logged / ログインに成功しました。")
+        #     # デバッグモードオフ
+        #     self.debug = False
 
-            # タイトルの表示
-            self.write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
+        #     # タイトルの表示
+        #     self.write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
 
-            # ロゴの表示位置を固定
-            self.logo = st.empty()
+        #     # ロゴの表示位置を固定
+        #     self.logo = st.empty()
 
-            # コンテンツメニューの表示
-            selection = st.radio("", list(self.pages.keys()))
-            self.show_image('line.png')
+        #     # コンテンツメニューの表示
+        #     selection = st.radio("", list(self.pages.keys()))
+        #     self.show_image('line.png')
 
-            # 選択肢に応じたロゴを固定した位置に表示
-            self.show_logo(selection)
+        #     # 選択肢に応じたロゴを固定した位置に表示
+        #     self.show_logo(selection)
 
-            # コンテンツページの表示
-            page = self.pages[selection]
-            page.main(self.debug)
+        #     # コンテンツページの表示
+        #     page = self.pages[selection]
+        #     page.main(self.debug)
 
-        # デバッグモードでログインした場合
-        elif self.is_authenticated(username, password) == 2:
-            # メインロゴ (縁) を消去
-            self.main_logo.empty()
-            # デバッグモードと表示
-            login_expander.success("Debug Mode / デバッグモード！！！")
-            # デバッグモード音
-            self.debug = True
+        # # デバッグモードでログインした場合
+        # elif self.is_authenticated(username, password) == 2:
+        #     # メインロゴ (縁) を消去
+        #     self.main_logo.empty()
+        #     # デバッグモードと表示
+        #     login_expander.success("Debug Mode / デバッグモード！！！")
+        #     # デバッグモード音
+        #     self.debug = True
 
-            # タイトルの表示
-            self.write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
+        #     # タイトルの表示
+        #     self.write_text("響介&理香子<br>結婚式二次会<br>特設サイト", 34, "center")
 
-            # ロゴの表示位置を固定
-            self.logo = st.empty()
+        #     # ロゴの表示位置を固定
+        #     self.logo = st.empty()
 
-            # コンテンツメニューの表示
-            selection = st.radio("", list(self.pages.keys()))
-            self.show_image('line.png')
+        #     # コンテンツメニューの表示
+        #     selection = st.radio("", list(self.pages.keys()))
+        #     self.show_image('line.png')
 
-            # 選択肢に応じたロゴを固定した位置に表示
-            self.show_logo(selection)
+        #     # 選択肢に応じたロゴを固定した位置に表示
+        #     self.show_logo(selection)
 
-            # コンテンツページの表示
-            page = self.pages[selection]
-            page.main(self.debug)
+        #     # コンテンツページの表示
+        #     page = self.pages[selection]
+        #     page.main(self.debug)
 
         # フッターの表示
         imgpath = "line.png"
