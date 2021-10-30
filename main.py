@@ -127,15 +127,16 @@ class Mainpage(object):
         # メインロゴ (縁) を表示
         self.main_logo = st.empty()
         self.main_logo.image(Image.open('logo.png'), use_column_width="auto")
-
-        # ログインセクションを表示
-        login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
-        username = login_expander.text_input("ユーザ名 / Username")
-        password = login_expander.text_input("パスワード / Password", value="", type="password")
-        login_expander.markdown("""こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。""")
-
         st.title("このホームページは移転しました")
         st.write("[移転先のページ](https://enjakee-pj.herokuapp.com/)")
+
+        # # ログインセクションを表示
+        # login_expander = st.beta_expander("ログインセクション / Login Section", expanded=True)
+        # username = login_expander.text_input("ユーザ名 / Username")
+        # password = login_expander.text_input("パスワード / Password", value="", type="password")
+        # login_expander.markdown("""こちらは招待者専用のホームページです。URLやログイン情報は絶対に流出させないでください。""")
+
+
         
 
         # 通常ログインした場合
