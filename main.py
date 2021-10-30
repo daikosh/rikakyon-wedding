@@ -127,7 +127,7 @@ class Mainpage(object):
         # メインロゴ (縁) を表示
         self.main_logo = st.empty()
         self.main_logo.image(Image.open('logo.png'), use_column_width="auto")
-        st.title("このホームページは移転しました")
+        st.subheader("このホームページは移転しました")
         st.write("[移転先のページ](https://enjakee-pj.herokuapp.com/)")
 
         # # ログインセクションを表示
